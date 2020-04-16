@@ -5,3 +5,34 @@
 body{
     width: 100%;
 }
+
+.container{
+    width: 1180px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logopag{
+  width: 180px;
+  border-radius: 50%;
+}
+
+.barraNavegacion ul{
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+.barraNavegacion li{
+    width: 230px;
+    height: 35px;
+    background-color: grey;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-right: 20px;
+    text-align: center;
+}
+
