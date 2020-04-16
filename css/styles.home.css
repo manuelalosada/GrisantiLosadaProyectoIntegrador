@@ -64,6 +64,7 @@ header{
 .barraNavegacion ul li a{
     width: 100%;
 }
+
 main{
     width: 100%;
     display: flex;
