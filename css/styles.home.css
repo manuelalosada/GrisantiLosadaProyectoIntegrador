@@ -34,5 +34,23 @@ body{
     gap: 20px;
     margin-right: 20px;
     text-align: center;
+    transition: 0.5s transform;
 }
 
+
+
+
+
+footer{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.logodeezer{
+    width: 180px;
+    float: right;
+}
+
+.nombres{
+    text-align: left;
+}
