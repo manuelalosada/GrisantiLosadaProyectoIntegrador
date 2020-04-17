@@ -1,3 +1,161 @@
 *{
     box-sizing: border-box;
 }
+
+body{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin:0;
+}
+
+.container{
+    width: 1180px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding:0;
+}
+
+header{
+    width:100%;
+    margin-top: 15px;
+}
+
+.logoPagina{
+    width: 180px;
+    margin-bottom: 0;
+}
+
+.logoPagina .logopag{
+  width: 100%;
+}
+
+.barraNavegacion {
+    width:100%;
+    height: 35px;
+    display: flex;
+    flex-direction: row;
+    margin:20px 0px;
+}
+.barraNavegacion ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    
+}
+
+.barraNavegacion ul li{
+    width: 24%;
+    height: 100%;
+    background-color: grey;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.barraNavegacion ul li a{
+    width: 100%;
+}
+
+main{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 900px;
+    margin-bottom: 20px;
+}
+
+.loNuevo {
+    width: 100%;
+    height: 42%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.loNuevo .newReleases{
+    width: 32.3%;
+    display: flex;
+    align-items: flex-end;
+    background-color: black;
+}
+
+.loNuevo .newReleases a{
+    color: cornsilk;
+    padding: 18px 22px;
+    font-size: 66px;
+}
+
+.loNuevo .sliderReleases{
+    width: 66.6%;
+    background-color: black;
+}
+
+.playlists{
+    width: 100%;
+    height: 57%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.playlists .playlist {
+    width: 24.5%;
+    height: 50%;
+    background-color: black;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: capitalize;
+    font-size: xx-large;
+}
+
+.playlists .playlist a{
+    color: cornsilk;
+
+}
+
+footer{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0;
+}
+
+.footerNombres{
+    width: 90%;
+    height: 100%;
+    background-color: black;
+    display: flex;
+    align-items: center;
+}
+
+.footerNombres .nombres {
+    width: 100%;
+    color: cornsilk;
+    padding-left: 15px;
+}
+
+.logoDeezer{
+    width: 9%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.logoDeezer img {
+    height: 100%;
+}
