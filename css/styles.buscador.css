@@ -1,5 +1,7 @@
 *{
     box-sizing: border-box;
+    color: white;
+    font-family: 'Lato', sans-serif;
 }
 
 /* disenio del header */
@@ -8,6 +10,7 @@ body{
     display: flex;
     justify-content: center;
     margin:0;
+    background-color: black
 }
 
 .container{
@@ -39,6 +42,7 @@ header{
     display: flex;
     flex-direction: row;
     margin:20px 0px;
+    
 }
 .barraNavegacion ul{
     display: flex;
@@ -66,7 +70,8 @@ header{
 .barraNavegacion ul li a{
     width: 100%;
     text-decoration: none;
-    color: black;
+    color: white;
+    text-transform: uppercase;
 }
 
 /* aca empieza el disenio del bodyyyy*/
@@ -129,15 +134,15 @@ h3{
     height: 100px;
     width: 10%;
     margin-top: 18px;
-    background-color: hotpink;
 }
 
 .genero .generalGenero .fotoGenero img{
     width: 100%;
+    border-radius: 50%;
 }
 .genero .generalGenero .nombreGenero {
     width: 10%;
-    margin-top: 10px;
+    margin-top: 20px;
     font-weight: bold;
     margin-bottom: 10px;
     display: flex;
@@ -158,7 +163,7 @@ h3{
     width: 100%;
     height: 30px;
     background-color: indianred;
-    margin: 3px 0px;
+    margin: 6px 0px;
     padding: 0px 10px;
     display: flex;
     align-items: center;
