@@ -1,0 +1,108 @@
+*{
+    box-sizing: border-box;
+}
+
+/* disenio del header */
+body{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin:0;
+}
+
+.container{
+    width: 1180px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding:0;
+}
+
+header{
+    width:100%;
+    margin-top: 15px;
+}
+
+.logoPagina{
+    width: 180px;
+    margin-bottom: 0;
+}
+
+.logoPagina .logopag{
+  width: 100%;
+}
+
+.barraNavegacion {
+    width:100%;
+    height: 35px;
+    display: flex;
+    flex-direction: row;
+    margin:20px 0px;
+}
+.barraNavegacion ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    
+}
+
+.barraNavegacion ul li{
+    width: 24%;
+    height: 100%;
+    background-color: rgba(114, 111, 111, 0.555);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.barraNavegacion ul li a{
+    width: 100%;
+}
+
+/* aca empieza el disenio del body*/
+
+
+/*aca empieza el disenio del footer */
+
+
+footer{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0;
+}
+
+.footerNombres{
+    width: 90%;
+    height: 100%;
+    background-color: black;
+    display: flex;
+    align-items: center;
+}
+
+.footerNombres .nombres {
+    width: 100%;
+    color: cornsilk;
+    padding-left: 15px;
+}
+
+.logoDeezer{
+    width: 9%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.logoDeezer img {
+    height: 100%;
+}
