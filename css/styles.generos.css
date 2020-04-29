@@ -1,11 +1,11 @@
+/*aca empieza el codigo para el body y lo general de la pagina*/
+
 *{
     box-sizing: border-box;
     color: white;
     font-family: 'Lato', sans-serif;
-    background-color: black;
 }
 
-/* disenio del header */
 body{
     width: 100%;
     display: flex;
@@ -21,6 +21,8 @@ body{
     align-items: center;
     padding:0;
 }
+
+/*aca empieza el codigo para el header de la pagina */
 
 header{
     width:100%;
@@ -57,7 +59,7 @@ header{
 .barraNavegacion ul li{
     width: 24%;
     height: 100%;
-    background-color: rgba(114, 111, 111, 0.555);
+    background-color: grey;
     display: flex;
     align-items: center;
     gap: 20px;
@@ -69,11 +71,73 @@ header{
     width: 100%;
 }
 
-/* aca empieza el disenio del bodyyyyy*/
+/* aca empieza el codigo para el main de la pagina*/
 
+main{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 900px;
+    margin-bottom: 20px;
+}
 
-/*aca empieza el disenio del footer */
+.loNuevo {
+    width: 100%;
+    height: 42%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
 
+.loNuevo .newReleases{
+    width: 32.3%;
+    display: flex;
+    align-items: flex-end;
+    background-color: black;
+}
+
+.loNuevo .newReleases a{
+    padding: 18px 22px;
+    font-size: 66px;
+}
+
+.loNuevo .sliderReleases{
+    width: 66.6%;
+    background-color: black;
+}
+
+.loNuevo .sliderReleases video{
+    width: 100%;
+    height: 100%;
+}
+
+.playlists{
+    width: 100%;
+    height: 57%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.playlists .playlist {
+    width: 24.5%;
+    height: 50%;
+    background-color: black;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: capitalize;
+    font-size: xx-large;
+}
+
+.playlists .playlist a{
+    color: cornsilk;
+
+}
+
+/* aca empieza el codigo para el footer de la pagina*/
 
 footer{
     width: 100%;
@@ -94,7 +158,6 @@ footer{
 
 .footerNombres .nombres {
     width: 100%;
-    color: cornsilk;
     padding-left: 15px;
 }
 
