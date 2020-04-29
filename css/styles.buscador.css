@@ -60,16 +60,20 @@ header{
     gap: 20px;
     text-align: center;
     text-transform: uppercase;
+    
 }
 
 .barraNavegacion ul li a{
     width: 100%;
+    text-decoration: none;
+    color: black;
 }
 
 /* aca empieza el disenio del bodyyyy*/
 
 .busqueda {
     width:100%;
+    margin-bottom: 30px;
 }
 
 .busqueda .respuestaBuscada {
@@ -90,10 +94,15 @@ header{
 
 }
 
+.busqueda .listadoRespuestas h1{
+    margin-bottom: 0;
+}
+
 .busqueda .listadoRespuestas ul{
     list-style: none;
     width: 100%;
     margin: 0;
+    padding: 0;
 }
 
 .busqueda .listadoRespuestas ul li{
@@ -102,24 +111,64 @@ header{
 
 /* aca empieza el disenio de los divs dentro de los li */
 
+h3{
+    margin: 35px 0px 0px 0px;
+}
 .genero{
     width: 100%;
 }
 
-.generalGenero{
+.genero .generalGenero{
     width: 100%;
+    margin-top: 10px;
+    padding-left: 40px;
+    
 }
 
-.generalGenero .fotoGenero {
+.genero .generalGenero .fotoGenero {
     height: 100px;
     width: 10%;
+    margin-top: 18px;
     background-color: hotpink;
 }
 
-.generalGenero .nombreGenero {
+.genero .generalGenero .fotoGenero img{
     width: 100%;
-
 }
+.genero .generalGenero .nombreGenero {
+    width: 10%;
+    margin-top: 10px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.genero .generalGenero .nombreGenero a{
+ width:75%;
+ text-align: center;
+}
+
+.genero .canciones{
+    width: 100%;
+    
+}
+
+.genero .canciones .cancion {
+    width: 100%;
+    height: 30px;
+    background-color: indianred;
+    margin: 3px 0px;
+    padding: 0px 10px;
+    display: flex;
+    align-items: center;
+}
+
+.genero .canciones .cancion a{
+    width: 100%;
+}
+
+
 
 /*aca empieza el disenio del footer */
 
