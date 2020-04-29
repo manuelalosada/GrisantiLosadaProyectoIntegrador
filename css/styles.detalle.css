@@ -166,6 +166,42 @@ footer{
     align-items: center;
 }
 
+.foto-album-track {
+  display: flex;
+  justify-content: center;
+}
+
+.generalGenero{
+    display: flex;
+  justify-content: center;
+}
+
+
+.help{
+    width: 50%;
+    margin-top: 10%;
+    border-radius: 8%;
+}
+
+.tango4{
+    width: 50%;
+    margin-top: 10%;
+    border-radius: 8%;
+}
+
+.lewis{
+    width: 50%;
+    margin-top: 10%;
+    border-radius: 8%;
+}
+
+.house{
+    width: 50%;
+    margin-top: 10%;
+    border-radius: 8%;
+
+}
+
 .logoDeezer img {
     height: 100%;
 }
