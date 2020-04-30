@@ -2,15 +2,15 @@
     box-sizing: border-box;
     color: white;
     font-family: 'Lato', sans-serif;
-    background-color: black;
+    
 }
 
-/* disenio del header */
 body{
     width: 100%;
     display: flex;
     justify-content: center;
     margin:0;
+    background-color: rgb(20, 20, 20);
 }
 
 .container{
@@ -22,18 +22,22 @@ body{
     padding:0;
 }
 
+/*aca empieza el codigo para el header de la pagina */
+
 header{
     width:100%;
     margin-top: 15px;
 }
 
 .logoPagina{
-    width: 180px;
+    width: 100%;
     margin-bottom: 0;
+    display: flex;
+    justify-content: center;
 }
 
 .logoPagina .logopag{
-  width: 100%;
+  width: 35%;
 }
 
 .barraNavegacion {
@@ -57,7 +61,7 @@ header{
 .barraNavegacion ul li{
     width: 24%;
     height: 100%;
-    background-color: rgba(114, 111, 111, 0.555);
+    background-color: rgba(36, 144, 148, 0.70);
     display: flex;
     align-items: center;
     gap: 20px;
@@ -67,13 +71,13 @@ header{
 
 .barraNavegacion ul li a{
     width: 100%;
+    text-decoration: none;
 }
 
-/* aca empieza el disenio del bodyyyyy*/
+/*aca empieza el codigo del main */
 
 
-/*aca empieza el disenio del footer */
-
+/* aca empieza el codigo para el footer de la pagina*/
 
 footer{
     width: 100%;
@@ -87,14 +91,12 @@ footer{
 .footerNombres{
     width: 90%;
     height: 100%;
-    background-color: black;
     display: flex;
     align-items: center;
 }
 
 .footerNombres .nombres {
     width: 100%;
-    color: cornsilk;
     padding-left: 15px;
 }
 
