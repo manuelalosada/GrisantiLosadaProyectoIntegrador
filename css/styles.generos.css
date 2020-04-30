@@ -4,6 +4,7 @@
     box-sizing: border-box;
     color: white;
     font-family: 'Lato', sans-serif;
+    
 }
 
 body{
@@ -11,6 +12,7 @@ body{
     display: flex;
     justify-content: center;
     margin:0;
+    background-color: black;
 }
 
 .container{
@@ -69,6 +71,7 @@ header{
 
 .barraNavegacion ul li a{
     width: 100%;
+    text-decoration: none;
 }
 
 /* aca empieza el codigo para el main de la pagina*/
@@ -77,17 +80,18 @@ main{
     width: 100%;
     display: flex;
     flex-direction: column;
-    height: 900px;
+    height: 1265px;
     margin-bottom: 20px;
 }
 
+/* realeases y video */
 .loNuevo {
     width: 100%;
     height: 42%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
 }
 
 .loNuevo .newReleases{
@@ -107,14 +111,16 @@ main{
     background-color: black;
 }
 
-.loNuevo .sliderReleases video{
+.loNuevo .sliderReleases .video {
     width: 100%;
     height: 100%;
 }
 
+/*playlists*/
+
 .playlists{
     width: 100%;
-    height: 57%;
+    height: 80%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -124,17 +130,37 @@ main{
     width: 24.5%;
     height: 50%;
     background-color: black;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
     text-transform: capitalize;
     font-size: xx-large;
+    position: relative;
+    z-index: 1;
+    padding: 5px;
+}
+
+
+.playlists .playlist img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 2;
+    opacity: 0.55;
+
 }
 
 .playlists .playlist a{
-    color: cornsilk;
-
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    text-decoration: none;
+    font-size: 150%;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* aca empieza el codigo para el footer de la pagina*/
