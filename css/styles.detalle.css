@@ -26,6 +26,20 @@ header{
     margin-top: 15px;
 }
 
+.main{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    height: 1265px;
+}
+
+.columna{
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 30%;
+
+}
+
 .logoPagina{
     width: 180px;
     margin-bottom: 0;
@@ -70,7 +84,7 @@ header{
 
 .cancion2{
     background-color: grey;
-    width: 100%;
+    width: 30%;
     height: 100%;
     margin-top: 6%;
     text-align: center;
@@ -79,17 +93,18 @@ header{
 
 .seguidoresArtista{
     background-color: grey;
-    width: 100%;
+    width: 30%;
     height: 100%;
     margin-top: 6%;
     text-align: center;
     border-radius: 8%;
+    
 
 }
 
 .nombreApellido{
     background-color: grey;
-    width: 100%;
+    width: 30%;
     height: 100%;
     margin-top: 6%;
     text-align: center;
@@ -98,7 +113,7 @@ header{
 
 .nombre-album-track{
     background-color: grey;
-    width: 100%;
+    width: 30%;
     height: 100%;
     margin-top: 6%;
     text-align: center;
@@ -107,7 +122,7 @@ header{
 
 .subnombre-album-track{
     background-color: grey;
-    width: 100%;
+    width: 30%;
     height: 100%;
     margin-top: 6%;
     text-align: center;
@@ -116,7 +131,7 @@ header{
 
 .estreno-album-track{
     background-color: grey;
-    width: 100%;
+    width: 30%;
     height: 100%;
     margin-top: 6%;
     text-align: center;
@@ -125,7 +140,7 @@ header{
 
 .genero-album-track{
     background-color: grey;
-    width: 100%;
+    width: 30%;
     height: 100%;
     margin-top: 6%;
     text-align: center;
