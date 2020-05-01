@@ -179,6 +179,15 @@ footer{
     
         }
 
+        .foto-rank{
+            width: 120px;
+            height: 200px;
+        }
+
+        .slider{
+            width: 375px;
+        }
+
         /* aca va el footer */
         footer{
             height: 50px;

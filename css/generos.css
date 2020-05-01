@@ -199,3 +199,21 @@ footer{
 .logoDeezer img {
     height: 100%;
 }
+
+@media(max-width:375px){
+    .main{
+        width: 375px;
+    }
+
+    .playlists{
+        width: 375px;
+        
+    }
+
+    .playlist{
+        width: 93px;
+    }
+    .playlists .playlist a{
+        width: 40px;
+    }
+}
