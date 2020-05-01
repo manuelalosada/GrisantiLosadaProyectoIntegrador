@@ -9,7 +9,6 @@ body{
     display: flex;
     justify-content: center;
     margin:0;
-    background-color: black;
 }
 
 .container{
@@ -91,7 +90,24 @@ header{
     flex-wrap: wrap;
 }
 
-.cancion2{
+
+/*aca empieza el codigo de main*/
+
+.main{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 1265px;
+}
+
+.columna{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 66%;
+}
+
+.canciones .cancion2{
     background-color: grey;
     width: 30%;
     height: 100%;
@@ -100,7 +116,15 @@ header{
     border-radius: 8%;
 }
 
-.seguidoresArtista{
+.artista{
+    width: 49%;
+    background-color: indigo;
+    margin-bottom: 10px;
+
+}
+
+
+.artista .generalArtista .seguidoresArtista{
     background-color: grey;
     width: 30%;
     height: 100%;
@@ -111,7 +135,7 @@ header{
 
 }
 
-.nombreApellido{
+.artista .generalArtista .nombreApellido{
     background-color: grey;
     width: 30%;
     height: 100%;
@@ -120,7 +144,13 @@ header{
     border-radius: 8%;
 }
 
-.nombre-album-track{
+.album-track{
+    width: 49%;
+    background-color: lightcoral;
+    margin-bottom: 10px;
+}
+
+.albumTrack .general-album-track .nombre-album-track{
     background-color: grey;
     width: 30%;
     height: 100%;
@@ -129,7 +159,7 @@ header{
     border-radius: 8%;
 }
 
-.subnombre-album-track{
+.albumTrack .general-album-track .subnombre-album-track{
     background-color: grey;
     width: 30%;
     height: 100%;
@@ -138,7 +168,7 @@ header{
     border-radius: 8%;
 }
 
-.estreno-album-track{
+.albumTrack .general-album-track .estreno-album-track{
     background-color: grey;
     width: 30%;
     height: 100%;
@@ -147,7 +177,7 @@ header{
     border-radius: 8%;
 }
 
-.genero-album-track{
+.albumTrack .genero-album-track{
     background-color: grey;
     width: 30%;
     height: 100%;
@@ -156,8 +186,15 @@ header{
     border-radius: 8%;
 }
 
+.genero{
+    width: 49%;
+    background-color: lightseagreen;
+}
 
 
+.propaganda{
+    width: 33%;
+}
 
 
 
