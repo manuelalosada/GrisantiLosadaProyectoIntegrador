@@ -228,6 +228,9 @@ footer{
     
         }
 
+        .genero .generalGenero .fotoGenero img{
+            width: 100px;
+            border-radius: 50%;
         
 
         /* aca va el footer */
