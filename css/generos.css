@@ -201,19 +201,35 @@ footer{
 }
 
 @media(max-width:375px){
-    .main{
+    
+    .container{
         width: 375px;
+        padding: 7px;
+        /* display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding:0; */
     }
 
-    .playlists{
-        width: 375px;
-        
+    header{
+        width:100%;
+        margin-top: 6px;
     }
 
-    .playlist{
-        width: 93px;
+    main{
+        width: 375px;
+        /* display: flex;
+        flex-direction: column; */
+        height: 600px;
+        margin-bottom: 20px;
     }
+
+    .loNuevo .newReleases a{
+        padding: 7px 12px;
+        font-size: 26px;
+    }
+
     .playlists .playlist a{
-        width: 40px;
+        font-size: 20px;
     }
 }
