@@ -59,7 +59,7 @@ header{
 }
 
 .barraNavegacion ul li{
-    width: 24%;
+    width: 19%;
     height: 100%;
     background-color: rgba(36, 144, 148, 0.70);
     display: flex;
@@ -181,6 +181,10 @@ footer{
 
         .foto-rank{
             width: 120px;
+            height: 200px;
+        }
+
+        .rankings{
             height: 200px;
         }
 
