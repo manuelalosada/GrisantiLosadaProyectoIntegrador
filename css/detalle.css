@@ -78,25 +78,18 @@ header{
     width: 100%;
     text-decoration: none;
 }
+
+
 /* fin heeader */
-
-.main{
-    display: flex;
-    
-}
-
-.generalArtista{
-    display: flex;
-    flex-wrap: wrap;
-}
 
 
 /*aca empieza el codigo de main*/
 
-.main{
+main{
     width: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
     height: 1265px;
 }
 
@@ -104,36 +97,36 @@ header{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    width: 66%;
+    width: 80%;
 }
 
-.canciones .cancion2{
-    background-color: grey;
-    width: 30%;
-    height: 100%;
-    margin-top: 6%;
-    text-align: center;
-    border-radius: 8%;
-}
 
 .artista{
     width: 49%;
     background-color: indigo;
     margin-bottom: 10px;
+    display: flex;
+    flex-direction: column
 
 }
 
+.artista .generalArtista {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-.artista .generalArtista .seguidoresArtista{
-    background-color: grey;
-    width: 30%;
-    height: 100%;
-    margin-top: 6%;
-    text-align: center;
-    border-radius: 8%;
-    
+.artista .generalArtista .fotoArtista{
+    width: 100%;
+    display: flex;
+    justify-content: center;
 
 }
+
+.artista .generalArtista .fotoArtista img{
+    width: 150px;
+}
+
 
 .artista .generalArtista .nombreApellido{
     background-color: grey;
@@ -143,6 +136,27 @@ header{
     text-align: center;
     border-radius: 8%;
 }
+
+.artista .generalArtista .seguidoresArtista{
+    background-color:rgba(36, 144, 148, 0.70);
+    width: 30%;
+    height: 100%;
+    margin-top: 6%;
+    text-align: center;
+    
+
+}
+
+
+.artista.canciones .cancion2{
+    background-color: grey;
+    width: 30%;
+    height: 100%;
+    margin-top: 6%;
+    text-align: center;
+    border-radius: 8%;
+}
+
 
 .album-track{
     width: 49%;
@@ -191,10 +205,17 @@ header{
     background-color: lightseagreen;
 }
 
-
-.propaganda{
-    width: 33%;
+.propaganda {
+    width: 19%
 }
+
+.propaganda img {
+    width: 100%;
+}
+
+
+
+
 
 
 
