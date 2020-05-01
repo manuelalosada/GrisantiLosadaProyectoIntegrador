@@ -84,7 +84,8 @@ main{
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    justify-content: center;
+    margin-top: 20px ;
 
 }
 
@@ -93,27 +94,52 @@ main{
     display: flex;
     flex-direction: column;
     justify-content: center;
-}
-
-
-.playlist .infoPlaylist .nombrePlaylist {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
+    align-items: center;
 }
 
 .playlist .infoPlaylist img {
     width: 200px;
 }
 
+.playlist .infoPlaylist .nombrePlaylist {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.playlist .nombrePlaylist h1{
+    margin: 0;
+    margin-top: 20px;
+}
+
+.playlist .nombrePlaylist h3{
+    height: 30px;
+    padding: 3px 20px;
+    background-color: rgba(36, 144, 148, 0.70);
+    margin: 15px 0px;
+
+}
+
 .playlist .canciones ol{
     display: flex;
     flex-direction: column;
+    padding: 0;
+    margin: 0;
+
 }
 
 .playlist .canciones ol li {
     width: 100%;
     height: 40px;
+    background-color: rgb(59, 59, 59);
+    margin: 5px 0px 5px 5px;
+    padding: 11px 0px 11px 7px;
+}
+
+.playlist .canciones ol li a{
+    color: lightseagreen;
+    text-decoration: none;
 }
 
 /* aca empieza el codigo para el footer de la pagina*/
@@ -125,6 +151,7 @@ footer{
     flex-direction: row;
     justify-content: space-between;
     padding: 0;
+    margin-top: 20px;
 }
 
 .footerNombres{
