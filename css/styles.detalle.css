@@ -21,32 +21,29 @@ body{
     padding:0;
 }
 
+
+
+
+
+
+/* codigo header */
+
+/*aca empieza el codigo para el header de la pagina */
+
 header{
     width:100%;
     margin-top: 15px;
 }
 
-.main{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    height: 1265px;
-}
-
-.columna{
-    flex-wrap: wrap;
-    justify-content: space-between;
-    width: 30%;
-
-}
-
 .logoPagina{
-    width: 180px;
+    width: 100%;
     margin-bottom: 0;
+    display: flex;
+    justify-content: center;
 }
 
 .logoPagina .logopag{
-  width: 100%;
+  width: 35%;
 }
 
 .barraNavegacion {
@@ -70,7 +67,7 @@ header{
 .barraNavegacion ul li{
     width: 24%;
     height: 100%;
-    background-color: grey;
+    background-color: rgba(36, 144, 148, 0.70);
     display: flex;
     align-items: center;
     gap: 20px;
@@ -80,6 +77,17 @@ header{
 
 .barraNavegacion ul li a{
     width: 100%;
+    text-decoration: none;
+}
+/* fin heeader */
+
+.main{
+    display: flex;
+}
+
+.generalArtista{
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .cancion2{
