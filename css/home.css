@@ -74,6 +74,8 @@ header{
     text-decoration: none;
 }
 
+/* aca empieza el main y lo que contiene la pagina */
+
 main{
     width: 100%;
     display: flex;
@@ -160,4 +162,28 @@ footer{
 
 .logoDeezer img {
     height: 100%;
+}
+
+@media(max-width:375px){
+    /* aca es lo general y el header*/
+    .container{
+        width: 375px;
+        }
+    
+        .barraNavegacion {
+            height: 20px;
+        }
+    
+        .barraNavegacion ul li a{
+            font-size: 12px;
+    
+        }
+
+        /* aca va el footer */
+        footer{
+            height: 50px;
+            font-size: x-small;
+           
+        }
+
 }

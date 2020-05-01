@@ -4,13 +4,12 @@
     font-family: 'Lato', sans-serif;
 }
 
-/* disenio del header */
 body{
     width: 100%;
     display: flex;
     justify-content: center;
     margin:0;
-    background-color: black
+    background-color: black;
 }
 
 .container{
@@ -21,6 +20,9 @@ body{
     align-items: center;
     padding:0;
 }
+/* codigo heeader  */
+
+/*aca empieza el codigo para el header de la pagina */
 
 header{
     width:100%;
@@ -28,12 +30,14 @@ header{
 }
 
 .logoPagina{
-    width: 180px;
+    width: 100%;
     margin-bottom: 0;
+    display: flex;
+    justify-content: center;
 }
 
 .logoPagina .logopag{
-  width: 100%;
+  width: 35%;
 }
 
 .barraNavegacion {
@@ -42,7 +46,6 @@ header{
     display: flex;
     flex-direction: row;
     margin:20px 0px;
-    
 }
 .barraNavegacion ul{
     display: flex;
@@ -58,20 +61,17 @@ header{
 .barraNavegacion ul li{
     width: 24%;
     height: 100%;
-    background-color: rgba(114, 111, 111, 0.555);
+    background-color: rgba(36, 144, 148, 0.70);
     display: flex;
     align-items: center;
     gap: 20px;
     text-align: center;
     text-transform: uppercase;
-    
 }
 
 .barraNavegacion ul li a{
     width: 100%;
     text-decoration: none;
-    color: white;
-    text-transform: uppercase;
 }
 
 /* aca empieza el disenio del bodyyyy*/
@@ -211,4 +211,28 @@ footer{
 
 .logoDeezer img {
     height: 100%;
+}
+
+@media(max-width:375px){
+    /* aca es lo general y el header*/
+    .container{
+        width: 375px;
+        }
+    
+        .barraNavegacion {
+            height: 20px;
+        }
+    
+        .barraNavegacion ul li a{
+            font-size: 12px;
+    
+        }
+
+        /* aca va el footer */
+        footer{
+            height: 50px;
+            font-size: x-small;
+           
+        }
+
 }
