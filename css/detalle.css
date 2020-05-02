@@ -183,7 +183,8 @@ main{
 }
 
 .albumTrack .fotoAlbumTrack img{
-    width: 200px;
+    width: 150px;
+    
 
 }
 
@@ -355,6 +356,46 @@ footer{
         .barraNavegacion ul li a{
             font-size: 12px;
     
+        }
+
+        .artista .generalArtista .fotoArtista img{
+            width: 80px;
+        }
+
+        .genero .generalGenero .fotoGenero img{
+            width:80px;
+        }
+        .albumTrack .fotoAlbumTrack img {
+            width: 112px;
+        }
+
+        .artista .canciones .cancion2 {
+            background-color: rgb(59, 59, 59);
+            width: 100%;
+            height: 45px;
+            padding: 4px;
+            margin-top: 5px;
+        }
+
+        .genero .canciones .cancion2 {
+            background-color: rgb(59, 59, 59);
+            width: 100%;
+            height: 49px;
+            padding: 2px;
+            margin-top: 6px;
+        }
+
+        .genero .generalGenero .nombreGenero {
+            margin-top: 14px;
+            font-size: 22px;
+        }
+
+        .albumTrack .generoAlbumTrack{
+            height: 32px;
+            font-size: 16px;
+        }
+        .propaganda img{
+            height: 660px;
         }
 
         /* aca va el footer */
