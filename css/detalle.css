@@ -398,6 +398,11 @@ footer{
             height: 660px;
         }
 
+        .artista .generalArtista .seguidoresArtista{
+            width: 74px;
+            font-size: 13px;
+        }
+
         /* aca va el footer */
         footer{
             height: 50px;
