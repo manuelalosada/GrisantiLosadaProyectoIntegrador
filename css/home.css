@@ -207,6 +207,11 @@ footer{
             width: 375px;
         }
 
+        .rankings .ranking1 a {
+            
+            font-size: 22px;
+        }
+
         /* aca va el footer */
         footer{
             height: 50px;
