@@ -59,6 +59,9 @@ window.onload = function () {
     })
     .then(function(myJson) {
       console.log(myJson);
+    })
+    .catch (function(error){
+        console.log ('El error fue ' + error)
     });
   
   }
