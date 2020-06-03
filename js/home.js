@@ -20,6 +20,28 @@
 
 window.onload = function () {
 
+fetch('https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart/0')
+    
+    .then(function(response){
+        return response.json();
+    })
+
+    .then(function(data){
+
+        var topTrack = document.querySelector('.rankingTrack')
+        var topArtista = document.querySelector('.rankingArtista')
+        var topAlbum = document.querySelector('.rankingAlbum')
+
+    for (let i = 0; i < data.length; i++) {
+        const element = data[i];
+        var nombreArtista = element.artist.name;
+        var tituloTrack = element.album.title;
+
+    }
+    })
+
+
+
 }
 
 // fijarse lo que hizo martin en el colearning, hay que

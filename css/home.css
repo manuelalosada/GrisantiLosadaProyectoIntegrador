@@ -102,13 +102,15 @@ main{
     margin-bottom: 20px;
 }
 
-.rankings .ranking1 {
+/* codigo del ranking de los tracks */
+
+.rankings .rankingTrack {
     display: flex;
     flex-direction: column;
     width: 32%;
 }
 
-.rankings .ranking1 h2 {
+.rankings .rankingTrack h2 {
     width: 100%;
     height: 70px;
     margin: 10px 0;
@@ -118,13 +120,80 @@ main{
     align-items: center;
 }
 
-.rankings .ranking1 ol {
+.rankings .rankingTrack ol {
     width: 100%;
     height: 85%;
     padding: 0;
 }
 
-.rankings .ranking1 ol li {
+.rankings .rankingTrack ol li {
+    height: 40px;
+    width: 100%;
+    margin-bottom: 8px;
+    background-color: grey;
+    display: flex;
+    align-items: center;
+    padding-left: 12px;
+}
+
+/* codigo del ranking de los albumes */
+
+.rankings .rankingAlbum {
+    display: flex;
+    flex-direction: column;
+    width: 32%;
+}
+
+.rankings .rankingAlbum h2 {
+    width: 100%;
+    height: 70px;
+    margin: 10px 0;
+    background-color: rgba(36, 144, 148, 0.70);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rankings .rankingAlbum ol {
+    width: 100%;
+    height: 85%;
+    padding: 0;
+}
+
+.rankings .rankingAlbum ol li {
+    height: 40px;
+    width: 100%;
+    margin-bottom: 8px;
+    background-color: grey;
+    display: flex;
+    align-items: center;
+    padding-left: 12px;
+}
+/* codigo del ranking de artistas */
+
+.rankings .rankingArtista {
+    display: flex;
+    flex-direction: column;
+    width: 32%;
+}
+
+.rankings .rankingArtista h2 {
+    width: 100%;
+    height: 70px;
+    margin: 10px 0;
+    background-color: rgba(36, 144, 148, 0.70);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rankings .rankingArtista ol {
+    width: 100%;
+    height: 85%;
+    padding: 0;
+}
+
+.rankings .rankingArtista ol li {
     height: 40px;
     width: 100%;
     margin-bottom: 8px;
@@ -210,6 +279,9 @@ footer{
     height: 100%;
 }
 
+
+
+
 @media(max-width:375px){
     /* aca es lo general y el header*/
     .container{
@@ -238,10 +310,19 @@ footer{
             width: 375px;
         }
 
-        .rankings .ranking1 a {
+        .rankings .rankingArtista a {
             
             font-size: 22px;
         }
+        .rankings .rankingAlbum a {
+            
+            font-size: 22px;
+        }
+        .rankings .rankingTrack a {
+            
+            font-size: 22px;
+        }
+
 
         /* aca va el footer */
         footer{
