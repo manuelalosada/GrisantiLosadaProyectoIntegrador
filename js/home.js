@@ -25,6 +25,8 @@ var topAlbum = " ";
 var topArtista = " ";
 var topTrack = " ";
 
+var carrousel = " ";
+
 fetch('https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart')
     
     .then(function(response){
@@ -60,11 +62,15 @@ fetch('https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart')
 
             var nombreArtista = element.name;
 
+            // para agregar artistas a la lista de world top artists
+
             topArtista += '<li>' + nombreArtista + '</li>'
 
             document.querySelector('.listadoArtista').innerHTML = topArtista;
+
         }
 
+        // 
         // array con tracks y sus datos
 
         var arrayTrack = resultado.tracks.data;
@@ -85,21 +91,33 @@ fetch('https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart')
             
         }
 
+//No borrar
+        for (let i = 0; i < arrayArtista.length; i++) {
+            const element = arrayArtista[i];
+
+            var imagenArtista = element.picture_medium
+            var elNombreArtista = element.name
+
+             // para agregar fotos y nombre del artista al carrousel
+
+            carrousel += '<li> </li>'
+                carrousel += '<img src="' + imagenArtista + '" alt="' + elNombreArtista + '">'
+                carrousel += '<div class="uk-position-center uk-panel">'
+                    carrousel += '<h1>' + elNombreArtista + '</h1>' 
+                carrousel += '</div>'
+            carrousel += '</li>'
+
+            console.log(carrousel)
+
+            var ulCarrousel = document.querySelector('.uk-slider-items')
+            
+            ulCarrousel.innerHTML = carrousel
+
+        }
+
+        
+
 
     })
 }
-    // for (let i = 0; i < data.length; i++) {
-    //     const element = data[i];
-    //     var nombreArtista = element.artist.name;
-    //     var tituloTrack = element.album.title;
-
-    // }
-    // })
-
-// fijarse lo que hizo martin en el colearning, hay que
-//  agregar las canciones con un array y usar esos 
-//  datos atravez de un for.
-
-
-// for (let i = 0; i < array.length; i++) {
-//   const element = array[i];
+   

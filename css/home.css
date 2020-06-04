@@ -118,7 +118,7 @@ main{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-bottom: 20px;
+    margin: 20px 0;
 }
 
 /* codigo del ranking de los tracks */

@@ -51,18 +51,36 @@
 // en la página de Playlist.
        
       
-window.onload = function () {
+window.onload = function (){
+
+  var queryString = location.search;
+  var queryStringObj = new URLSearchParams (queryString)
   
-    fetch('https://api.deezer.com/chart')
-    .then(function(response) {
-      return response.json();
-    })
-    .then(function(myJson) {
-      console.log(myJson);
-    })
-    .catch (function(error){
-        console.log ('El error fue ' + error)
-    });
-  
-  }
-  
+
+  if (queryStringObj){
+
+    fetch('https://cors-anywhere.herokuapp.com/https://api.deezer.com/track')
+
+      .then(function(response) {
+          return response.json();
+      })
+
+      .then(function(resultado) {
+          console.log(resultado);
+
+          // en esta parte hay que reemplazar con todos los
+          // datos que toco el usuario en otra pagina
+
+
+          // document.querySelector('.cancion2').innerHTML= resultado.title
+
+
+      })
+      .catch (function(error){
+            console.log ('El error fue ' + error)
+      }); 
+
+    }else{
+      alert('No se recibio ningun dato')
+    }
+}
