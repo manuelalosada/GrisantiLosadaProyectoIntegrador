@@ -50,7 +50,7 @@
 // ser almacenado en la sesión del usuario para escucharlo 
 // en la página de Playlist.
        
-       
+      
 window.onload = function () {
   
     fetch('https://api.deezer.com/chart')
