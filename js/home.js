@@ -9,6 +9,7 @@
 //     Carousel/slideshow con imágenes 
 //     Buscador
 //     3 charts (albums/artists/tracks)
+
 // FOOTER
 //   redes sociales
 
@@ -42,7 +43,9 @@ fetch('https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart')
             
             var nombreAlbum = element.title;
 
-            topAlbum += '<li>' + nombreAlbum + '</li>'
+            var nombreArtistaAlbum = element.artist.name
+
+            topAlbum += '<li>' + nombreAlbum + ' -  <a> ' + nombreArtistaAlbum + '</a> </li>'
 
             document.querySelector('.listadoAlbum').innerHTML = topAlbum;
         }
@@ -74,7 +77,9 @@ fetch('https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart')
 
             var tituloTrack = element.title;
 
-            topTrack += '<li>' + tituloTrack + '</li>'
+            var nombreArtistaTrack = element.artist.name
+
+            topTrack += '<li>' + tituloTrack + ' -  <a> ' + nombreArtistaTrack + '</a> </li>'
 
             document.querySelector('.listadoTrack').innerHTML = topTrack;
             

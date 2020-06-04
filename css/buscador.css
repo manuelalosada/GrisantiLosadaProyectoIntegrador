@@ -74,6 +74,24 @@ header{
     text-decoration: none;
 }
 
+.barraNavegacion ul li form {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.barraNavegacion ul li form button{
+    height: 100%;
+    width: 15%;
+    background-color: rgba(36, 144, 148, 0.70);
+}
+.barraNavegacion ul li form input{
+    height: 100%;
+    width: 85%;
+    background-color: rgba(36, 144, 148, 0.70);
+}
+
 /* aca empieza el disenio del bodyyyy*/
 
 .busqueda {

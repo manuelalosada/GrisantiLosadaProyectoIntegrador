@@ -74,6 +74,25 @@ header{
     text-decoration: none;
 }
 
+.barraNavegacion ul li form {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.barraNavegacion ul li form button{
+    height: 100%;
+    width: 15%;
+    background-color: rgba(36, 144, 148, 0.70);
+}
+.barraNavegacion ul li form input{
+    height: 100%;
+    width: 85%;
+    background-color: rgba(36, 144, 148, 0.70);
+}
+
+
 /* aca empieza el main y lo que contiene la pagina */
 
 main{
@@ -136,6 +155,11 @@ main{
     padding-left: 12px;
 }
 
+.rankings .rankingTrack .listadoTrack li a{
+    color: lightseagreen;
+    text-decoration: none;
+}
+
 /* codigo del ranking de los albumes */
 
 .rankings .rankingAlbum {
@@ -168,6 +192,11 @@ main{
     display: flex;
     align-items: center;
     padding-left: 12px;
+}
+
+.rankings .rankingAlbum .listadoAlbum li a{
+    color: lightseagreen;
+    text-decoration: none;
 }
 /* codigo del ranking de artistas */
 
@@ -203,8 +232,9 @@ main{
     padding-left: 12px;
 }
 
-.rankings .rankingArtista .listadoArtista li {
-   
+.rankings .rankingArtista .listadoArtista li a{
+    color: lightseagreen;
+    text-decoration: none;
 }
 
 
