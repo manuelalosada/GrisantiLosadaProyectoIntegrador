@@ -119,5 +119,6 @@ var tipo = queryStringObj.get("tipo")
         // document.querySelector('').innerHTML = data.
         // document.querySelector('').innerHTML = data.
       
-    }
+    })
+}
 }
