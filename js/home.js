@@ -91,29 +91,6 @@ fetch('https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart')
             
         }
 
-//No borrar
-        for (let i = 0; i < arrayArtista.length; i++) {
-            const element = arrayArtista[i];
-
-            var imagenArtista = element.picture_medium
-            var elNombreArtista = element.name
-
-             // para agregar fotos y nombre del artista al carrousel
-
-            carrousel += '<li> </li>'
-                carrousel += '<img src="' + imagenArtista + '" alt="' + elNombreArtista + '">'
-                carrousel += '<div class="uk-position-center uk-panel">'
-                    carrousel += '<h1>' + elNombreArtista + '</h1>' 
-                carrousel += '</div>'
-            carrousel += '</li>'
-
-            console.log(carrousel)
-
-            var ulCarrousel = document.querySelector('.uk-slider-items')
-            
-            ulCarrousel.innerHTML = carrousel
-
-        }
 
         
 
