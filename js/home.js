@@ -47,7 +47,7 @@ fetch('https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart')
 
             var nombreArtistaAlbum = element.artist.name
 
-            topAlbum += '<li>' + nombreAlbum + ' -  <a> ' + nombreArtistaAlbum + '</a> </li>'
+            topAlbum += '<li> <a href="detalle.html?id=' + element.id + '&tipo=album">' + nombreAlbum + ' - ' + nombreArtistaAlbum + ' </li>'
 
             document.querySelector('.listadoAlbum').innerHTML = topAlbum;
         }
@@ -64,7 +64,7 @@ fetch('https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart')
 
             // para agregar artistas a la lista de world top artists
 
-            topArtista += '<li>' + nombreArtista + '</li>'
+            topArtista += '<li> <a href="detalle.html?id=' + element.id + '&tipo=artist">' + nombreArtista + '</a> </li>'
 
             document.querySelector('.listadoArtista').innerHTML = topArtista;
 
@@ -85,7 +85,7 @@ fetch('https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart')
 
             var nombreArtistaTrack = element.artist.name
 
-            topTrack += '<li>' + tituloTrack + ' -  <a> ' + nombreArtistaTrack + '</a> </li>'
+            topTrack += '<li> <a href="detalle.html?id=' + element.id + '&tipo=track">' + tituloTrack + '</a> - ' + nombreArtistaTrack + '</li>'
 
             document.querySelector('.listadoTrack').innerHTML = topTrack;
             

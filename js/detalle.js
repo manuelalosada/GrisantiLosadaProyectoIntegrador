@@ -45,6 +45,7 @@
        
 // Esto abrirá la página de detalle de track con el track 
 // número 3 de Deezer, mostrando su información.
+
 // Feature: El cliente requiere también desea que si 
 // el detalle seleccionado es de un track, este pueda 
 // ser almacenado en la sesión del usuario para escucharlo 
@@ -60,16 +61,23 @@
 
 // Track  : https://developers.deezer.com/api/track 
 // Endpoint : https://api.deezer.com/track/3135556
+
+
       
 window.onload = function (){
 
   var queryString = location.search;
   var queryStringObj = new URLSearchParams (queryString)
   
+  console.log(queryStringObj)
 
-  if (queryStringObj){
+var id = queryStringObj.get("id")
+var tipo = queryStringObj.get("tipo")
 
-    fetch('https://cors-anywhere.herokuapp.com/https://api.deezer.com/track')
+  if (tipo == 'track'){
+  
+
+    fetch('https://cors-anywhere.herokuapp.com/https://api.deezer.com/track/' + id )
 
       .then(function(response) {
           return response.json();
@@ -78,19 +86,38 @@ window.onload = function (){
       .then(function(resultado) {
           console.log(resultado);
 
-          // en esta parte hay que reemplazar con todos los
-          // datos que toco el usuario en otra pagina
-
-
-          // document.querySelector('.cancion2').innerHTML= resultado.title
-
+          // document.querySelector('.nombreApellido').innerHTML= resultado.name
+          // document.querySelector('.seguidoresArtista').innerHTML= resultado.
+          // document.querySelector('').innerHTML = resultado.
+          // document.querySelector('').innerHTML = resultado.
+          // document.querySelector('').innerHTML = resultado.
+          // document.querySelector('').innerHTML = resultado.
+          // document.querySelector('').innerHTML = resultado.
 
       })
+
       .catch (function(error){
             console.log ('El error fue ' + error)
       }); 
 
-    }else{
-      alert('No se recibio ningun dato')
+    }else if (tipo == "album"){
+
+      fetch('https://cors-anywhere.herokuapp.com/https://api.deezer.com/album/'+ id)
+
+      .then(function(response) {
+        return response.json();
+    })
+
+    .then(function(data) {
+        console.log(data);
+
+        // document.querySelector('').innerHTML = data.
+        // document.querySelector('').innerHTML = data.
+        // document.querySelector('').innerHTML = data.
+        // document.querySelector('').innerHTML = data.
+        // document.querySelector('').innerHTML = data.
+        // document.querySelector('').innerHTML = data.
+        // document.querySelector('').innerHTML = data.
+      
     }
 }
