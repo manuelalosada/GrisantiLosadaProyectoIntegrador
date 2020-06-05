@@ -19,11 +19,11 @@
 
 window.onload = function () {
 
-var queryString = location.search;
+    var queryString = location.search;
 
-var queryStringObj = new URLSearchParams (queryString);
+    var queryStringObj = new URLSearchParams (queryString);
 
-var busquedaUsuario = queryStringObj.get ('textoBuscado');
+    var busquedaUsuario = queryStringObj.get ('textoBuscado');
 
     fetch('')
 
