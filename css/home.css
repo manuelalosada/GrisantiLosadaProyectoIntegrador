@@ -20,7 +20,7 @@ body{
     align-items: center;
     padding:0;
 }
-/* codigo heeader  */
+
 
 /*aca empieza el codigo para el header de la pagina */
 
@@ -72,6 +72,7 @@ header{
 .barraNavegacion ul li a{
     width: 100%;
     text-decoration: none;
+    color: white;
 }
 
 .barraNavegacion ul li form {
@@ -137,6 +138,7 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
+    color: whitesmoke
 }
 
 .rankings .rankingTrack .listadoTrack {
@@ -176,6 +178,7 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
+    color: whitesmoke;
 }
 
 .rankings .rankingAlbum .listadoAlbum {
@@ -214,6 +217,7 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
+    color: whitesmoke
 }
 
 .rankings .rankingArtista .listadoArtista {
