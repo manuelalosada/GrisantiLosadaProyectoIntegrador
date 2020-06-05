@@ -19,4 +19,39 @@
 
 window.onload = function () {
 
-}
+var queryString = location.search;
+
+var queryStringObj = new URLSearchParams (queryString);
+
+var busquedaUsuario = queryStringObj.get ('textoBuscado');
+
+    fetch('')
+
+        .then(function(response) {
+          return response.json();
+         })
+
+        .then(function(resultado) {
+          console.log(resultado.data);
+
+          var contenido = ""
+          for (let i = 0; i < resultado.data.length; i++) {
+              const element = resultado.data[i];
+              
+              var cancion = element. // buscar en la api las  variables 
+
+              contenido += // depende de lo que traiga de la api 
+          }
+
+
+
+        })
+        .catch (function(error){
+            console.log ('El error fue ' + error)
+        }); 
+    })
+
+
+
+} //NO BORRAR 
+
