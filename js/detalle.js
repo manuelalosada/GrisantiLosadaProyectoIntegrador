@@ -86,13 +86,12 @@ var tipo = queryStringObj.get("tipo")
       .then(function(resultado) {
           console.log(resultado);
 
-          // document.querySelector('.nombreApellido').innerHTML= resultado.name
-          // document.querySelector('.seguidoresArtista').innerHTML= resultado.
-          // document.querySelector('').innerHTML = resultado.
-          // document.querySelector('').innerHTML = resultado.
-          // document.querySelector('').innerHTML = resultado.
-          // document.querySelector('').innerHTML = resultado.
-          // document.querySelector('').innerHTML = resultado.
+          document.querySelector('.nombreTrack h1').innerHTML= resultado.title
+          document.querySelector('.subnombreTrack h3').innerHTML= resultado.artist.name
+          document.querySelector('.estrenoTrack h4').innerHTML = resultado.release_date
+          document.querySelector('.fotoTrack').innerHTML = '<img src="' + resultado.album.cover_medium + '" alt="tango4" class="tango4"></img>'
+          // document.querySelector('.generoTrack a').innerHTML = resultado.NO ENCUENTRO EL GENERO
+          
 
       })
 
@@ -111,14 +110,39 @@ var tipo = queryStringObj.get("tipo")
     .then(function(data) {
         console.log(data);
 
-        // document.querySelector('').innerHTML = data.
-        // document.querySelector('').innerHTML = data.
-        // document.querySelector('').innerHTML = data.
-        // document.querySelector('').innerHTML = data.
-        // document.querySelector('').innerHTML = data.
-        // document.querySelector('').innerHTML = data.
-        // document.querySelector('').innerHTML = data.
+        document.querySelector('.fotoAlbum').innerHTML = ' <img src="' + data.cover_medium + '" alt="help-beatles" class="help">'
+        document.querySelector('.nombreAlbum h1').innerHTML = data.title
+        document.querySelector('.subnombreAlbum h3').innerHTML = data.artist.name
+        document.querySelector('.estrenoAlbum h4').innerHTML = data.release_date
+
+        var arrayAlbumGenero = data.genres
+        
+        for (let i = 0; i < arrayAlbumGenero.length; i++) {
+          const element = arrayAlbumGenero.length[i];
+
+          document.querySelector('.generoAlbum a').innerHTML = element.name
+          
+        }
+        
+    
       
     })
-}
+  } else if (tipo == 'artist'){
+      fetch('https://cors-anywhere.herokuapp.com/https://api.deezer.com/artist/' + id)
+
+      .then(function(response){
+        return response.json();
+      })
+
+      .then(function(result){
+        console.log(result);
+
+        document.querySelector(".fotoArtista").innerHTML = '<img src="' + result.picture_medium + '" alt="help-beatles" class="lewis">' 
+        document.querySelector(".nombreApellido").innerHTML = result.name
+        document.querySelector(".seguidoresArtista a").innerHTML = result.nb_fan + ' followers'
+        
+        
+
+      })
+  }
 }
