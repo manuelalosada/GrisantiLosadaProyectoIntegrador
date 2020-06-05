@@ -15,6 +15,13 @@
 // Al hacer click sobre cualquier género la aplicación
 // nos va a redirigir a la página de detalle (ver detalle)
 
+
+GÉNEROS
+Listado con todos los géneros.
+Genre: https://developers.deezer.com/api/genre 
+Endpoint: https://api.deezer.com/genre
+
+
 window.onload = function () {
 
 }

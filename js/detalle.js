@@ -50,6 +50,16 @@
 // ser almacenado en la sesión del usuario para escucharlo 
 // en la página de Playlist.
        
+
+// DETALLE 
+// Artista :  https://developers.deezer.com/api/artist 
+// Endpoint : https://api.deezer.com/artist/27
+
+// Álbum : https://developers.deezer.com/api/album 
+// Endpoint : https://api.deezer.com/album/302127
+
+// Track  : https://developers.deezer.com/api/track 
+// Endpoint : https://api.deezer.com/track/3135556
       
 window.onload = function (){
 
