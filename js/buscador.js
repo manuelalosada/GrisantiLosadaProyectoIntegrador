@@ -19,4 +19,38 @@
 
 window.onload = function () {
 
-}
+    var queryString = location.search;
+
+    var queryStringObj = new URLSearchParams (queryString);
+
+    var busquedaUsuario = queryStringObj.get ('textoBuscado');
+
+    fetch('https://cors-anywhere.herokuapp.com/ https://api.deezer.com/search/track?q=eminem')
+
+        .then(function(response) {
+          return response.json();
+         })
+
+        .then(function(resultado) {
+          console.log(resultado.data);
+
+          var contenido = ""
+          for (let i = 0; i < resultado.data.length; i++) {
+              const element = resultado.data[i];
+              
+              var cancion = element.title
+
+             
+          }
+
+
+
+        })
+        .catch (function(error){
+            console.log ('El error fue ' + error)
+        }); 
+    
+
+
+} //NO BORRAR 
+
