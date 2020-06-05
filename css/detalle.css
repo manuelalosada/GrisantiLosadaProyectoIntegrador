@@ -188,9 +188,9 @@ main{
 
 
 
-/* aca empieza el album track */
+/* aca empieza el album */
 
-.albumTrack{
+.album{
     width: 49%;
     margin-bottom: 10px;
     display: flex;
@@ -200,25 +200,25 @@ main{
     border: solid 3px rgb(46, 46, 46);
 }
 
-.albumTrack .fotoAlbumTrack img{
+.album .fotoAlbum img{
     width: 150px;
     
 
 }
 
-.albumTrack .generalAlbumTrack .nombreAlbumTrack{
+.album .generalAlbum .nombreAlbum{
     margin-top: 10px;
     text-align: center;
     font-size: 30px;
 }
 
-.albumTrack .generalAlbumTrack .nombreAlbumTrack h1{
+.album .generalAlbum .nombreAlbum h1{
     margin-top: 10px;
     text-align: center;
     font-size: 30px;
 }
 
-.albumTrack .generalAlbumTrack .subnombreAlbumTrack{
+.album .generalAlbum .subnombreAlbum{
     margin-top: 10px;
     text-align: center;
     padding: 5px;
@@ -226,16 +226,16 @@ main{
 
 }
 
-.albumTrack .generalAlbumTrack .subnombreAlbumTrack h3{
+.album .generalAlbum .subnombreAlbum h3{
     margin:0;
 }
 
-.albumTrack .generalAlbumTrack .estrenoAlbumTrack{
+.album .generalAlbum .estrenoAlbum{
     margin-top: 10px;
     text-align: center;
 }
 
-.albumTrack .generalAlbumTrack .estrenoAlbumTrack h4{
+.album .generalAlbum .estrenoAlbum h4{
     margin: 0;
     margin: 10px 0;
     text-align: center;
@@ -243,7 +243,7 @@ main{
 }
 
 
-.albumTrack .generoAlbumTrack{
+.album .generoAlbum{
     margin-top: 10px;
     text-align: center;
     height: 30px;
@@ -253,7 +253,77 @@ main{
 
 }
 
-.albumTrack .generAlbumTrack a{
+.album .generAlbum a{
+    text-transform: uppercase;
+    
+}
+
+/* aca empieza el codigo de track */
+
+.track{
+    width: 49%;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: solid 3px rgb(46, 46, 46);
+}
+
+.track .fotoTrack img{
+    width: 150px;
+    
+
+}
+
+.track .generalTrack .nombreTrack{
+    margin-top: 10px;
+    text-align: center;
+    font-size: 30px;
+}
+
+.track .generalTrack .nombreTrack h1{
+    margin-top: 10px;
+    text-align: center;
+    font-size: 30px;
+}
+
+.track .generalTrack .subnombreTrack{
+    margin-top: 10px;
+    text-align: center;
+    padding: 5px;
+    border: 3px dashed rgba(36, 144, 148, 0.70);
+
+}
+
+.track .generalTrack .subnombreTrack h3{
+    margin:0;
+}
+
+.track .generalTrack .estrenoTrack{
+    margin-top: 10px;
+    text-align: center;
+}
+
+.track .generalTrack .estrenoTrack h4{
+    margin: 0;
+    margin: 10px 0;
+    text-align: center;
+
+}
+
+
+.track .generoTrack{
+    margin-top: 10px;
+    text-align: center;
+    height: 30px;
+    background-color: rgba(36, 144, 148, 0.70);
+    padding: 3px 7px;
+    font-size: 20px;
+
+}
+
+.track .generoTrack a{
     text-transform: uppercase;
     
 }
