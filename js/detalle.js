@@ -45,6 +45,7 @@
        
 // Esto abrirá la página de detalle de track con el track 
 // número 3 de Deezer, mostrando su información.
+
 // Feature: El cliente requiere también desea que si 
 // el detalle seleccionado es de un track, este pueda 
 // ser almacenado en la sesión del usuario para escucharlo 
@@ -60,16 +61,19 @@
 
 // Track  : https://developers.deezer.com/api/track 
 // Endpoint : https://api.deezer.com/track/3135556
+
+
       
 window.onload = function (){
 
   var queryString = location.search;
   var queryStringObj = new URLSearchParams (queryString)
   
+  console.log(queryStringObj)
 
   if (queryStringObj){
 
-    fetch('https://cors-anywhere.herokuapp.com/https://api.deezer.com/track')
+    fetch('https://cors-anywhere.herokuapp.com/https://api.deezer.com/track/3135556' )
 
       .then(function(response) {
           return response.json();
@@ -82,7 +86,7 @@ window.onload = function (){
           // datos que toco el usuario en otra pagina
 
 
-          // document.querySelector('.cancion2').innerHTML= resultado.title
+          document.querySelector('.cancion2').innerHTML= resultado.title
 
 
       })
