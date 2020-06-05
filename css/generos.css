@@ -148,8 +148,8 @@ main{
 }
 
 .playlists .playlist:hover {
-    width: 20%;
-    height: 100px;
+    width: 25%;
+    height: 55%;
   }
 
 .playlists .playlist {
