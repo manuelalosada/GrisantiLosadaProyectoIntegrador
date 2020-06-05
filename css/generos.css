@@ -144,7 +144,13 @@ main{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    transition: width 2s, height 4s;
 }
+
+.playlists .playlist:hover {
+    width: 20%;
+    height: 100px;
+  }
 
 .playlists .playlist {
     width: 24.5%;

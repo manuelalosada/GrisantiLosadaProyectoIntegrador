@@ -25,7 +25,7 @@ window.onload = function () {
 
     var busquedaUsuario = queryStringObj.get ('textoBuscado');
 
-    fetch('')
+    fetch('https://cors-anywhere.herokuapp.com/ https://api.deezer.com/search/track?q=eminem')
 
         .then(function(response) {
           return response.json();
@@ -38,9 +38,9 @@ window.onload = function () {
           for (let i = 0; i < resultado.data.length; i++) {
               const element = resultado.data[i];
               
-              var cancion = element. // buscar en la api las  variables 
+              var cancion = element.title
 
-              contenido += // depende de lo que traiga de la api 
+             
           }
 
 
@@ -49,8 +49,7 @@ window.onload = function () {
         .catch (function(error){
             console.log ('El error fue ' + error)
         }); 
-    })
-
+    
 
 
 } //NO BORRAR 
