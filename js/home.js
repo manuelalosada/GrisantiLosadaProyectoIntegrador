@@ -47,7 +47,7 @@ fetch('https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart')
 
             var nombreArtistaAlbum = element.artist.name
 
-            topAlbum += '<li> <a href="detalle.html?id=' + element.id + '&tipo=album">' + nombreAlbum + ' - ' + nombreArtistaAlbum + ' </li>'
+            topAlbum += '<li> <a href="detalle.html?id=' + element.id + '&tipo=album">' + nombreAlbum + '</a> - ' + nombreArtistaAlbum + ' </li>'
 
             document.querySelector('.listadoAlbum').innerHTML = topAlbum;
         }
