@@ -1,7 +1,6 @@
 // PLAYLIST
 
-// Header   
-//     se requiere logo del sitio y barra de navegación  
+
 // Section  
 //     Los temas favoritos reproducibles
 // Footer
@@ -24,6 +23,6 @@
 
 window.onload = function () {
     
-
+    
 
 }

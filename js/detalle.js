@@ -1,42 +1,21 @@
 // DETALLE
  
-// Header   
-//     Se requiere logo del sitio y barra de navegación
-// Section  
+
 //     Detalle de Artista
-//         Imagen del artista
-//         Nombre
-//         Fans (numero) 
 //         HARD:  top 5 de canciones del artista (hipervínculo 
 //             a detalle del track)
-
-//     Detalle de Álbum
-//         Imagen de album 
-//         Nombre del Álbum
-//         Nombre del artista(hipervínculo al detalle del artista)
-//         Fecha de salida
-
-//     Detalle Track
-//         Nombre del track
-//         Imagen
-//         Nombre del artista (hipervínculo al detalle del artista)
-//         Duración 
-//         Nombre del álbum(hipervínculo al detalle del álbum)
-//         Botón agregar a la playlist
 
 //     Detalle Genero
 //         Nombre del género 
 //        10 artistas que pertenezcan a ese género 
 //        (hipervínculo al detalle del artista)
-//        Footer
-//        Nombres de los integrantes
-//        Logo de deezer
+//      
+// Footer
+//       
 //        Redes sociales
        
 // Funcionalidad:
-// El cliente pide que la información que se vea en 
-// esta pagina se cargue dinamicamente desde la api 
-// de Deezer. 
+// 
 // Para lograr esto la página de detalle recibirá 
 // un parámetro via querystring en la URL indicando 
 // qué número de artist/album/track/genre) para identificar
@@ -50,17 +29,7 @@
 // el detalle seleccionado es de un track, este pueda 
 // ser almacenado en la sesión del usuario para escucharlo 
 // en la página de Playlist.
-       
 
-// DETALLE 
-// Artista :  https://developers.deezer.com/api/artist 
-// Endpoint : https://api.deezer.com/artist/27
-
-// Álbum : https://developers.deezer.com/api/album 
-// Endpoint : https://api.deezer.com/album/302127
-
-// Track  : https://developers.deezer.com/api/track 
-// Endpoint : https://api.deezer.com/track/3135556
 
 
       
@@ -107,35 +76,54 @@ var htmlTrack = ""
                 htmlTrack += '</h3>'
               htmlTrack += '</div>'
 
+              htmlAlbum += '<div class="nombreAlbumTrack"'
+                htmlAlbum += '<h3>Album:'
+                htmlAlbum += '</h3>'
+              htmlAlbum += '</div>'
+              
+              htmlAlbum += '<div class="duracionTrack">'
+                htmlAlbum += '<h3>Duration: ' 
+                htmlAlbum += '</h3>'
+              htmlAlbum += '</div>'
+
               htmlTrack += '<div class="estrenoTrack">'
-                htmlTrack += '<h4>'
+                htmlTrack += '<h4>Release Date: '
                 htmlTrack += '</h4>'
               htmlTrack += '</div>'
 
             htmlTrack += '</div>'
 
-            htmlTrack+= '<div class="generoTrack">'
+            htmlTrack += '<div class="generoTrack">'
               htmlTrack += '<a>'
               htmlTrack += '</a>'
             htmlTrack += '</div>'
+
+            htmlAlbum += ' <form action = "playlist.html" method = "GET">' 
+              htmlAlbum += '<button type = "submit"> Add to playlist </button>'
+              htmlAlbum += '<input type = "text" name = "cancionAgregada">'
+            htmlAlbum += '</form>'
         
           htmlTrack += "</div>"
 
           document.querySelector('.columna').innerHTML = htmlTrack
 
+        
+
 
           document.querySelector('.nombreTrack h1').innerHTML= resultado.title
-          document.querySelector('.subnombreTrack h3').innerHTML= resultado.artist.name
+          document.querySelector('.subnombreTrack h3').innerHTML=   '<a href="detalle.html?id=' + resultado.artist.id + '&tipo=artist">' + resultado.artist.name + '</a>'
           document.querySelector('.estrenoTrack h4').innerHTML = resultado.release_date
-          document.querySelector('.fotoTrack').innerHTML = '<img src="' + resultado.album.cover_medium + '" alt="tango4" class="tango4"></img>'
+          // document.querySelector('.nombreAlbumTrack h3').innerHTML += '<a href="detalle.html?id=' + resultado.album.id +'&tipo=album">' + resultado.album.title +'</a>'
+          // document.querySelector('.fotoTrack').innerHTML = '<img src="' + resultado.album.cover_medium + '" alt="tango4" class="tango4"></img>'
+          // document.querySelector('.duracionTrack').innerHTML = resultado.duration;
           // document.querySelector('.generoTrack a').innerHTML = resultado.NO ENCUENTRO EL GENERO
           
 
       })
 
-      .catch (function(error){
-            console.log ('El error fue ' + error)
-      }); 
+      // .catch (function(error){
+      //       console.log ('El error fue ' + error)
+      // }); 
 
     }else if (tipo == "album"){
 
@@ -148,7 +136,7 @@ var htmlTrack = ""
     .then(function(data) {
         console.log(data);
 
-        // Este es el codigo que se va a ver en la pagina si toca un album
+       // Este es el codigo que se va a ver en la pagina si toca un album
         htmlAlbum += '<div class="album">'
 
           htmlAlbum += '<div class="fotoAlbum">'
@@ -167,7 +155,7 @@ var htmlTrack = ""
             htmlAlbum += '</div>'
 
             htmlAlbum += '<div class="estrenoAlbum">'
-              htmlAlbum += '<h4>'
+              htmlAlbum += '<h4>Release Date: '
               htmlAlbum += '</h4>'
             htmlAlbum += '</div>'
 
@@ -186,7 +174,7 @@ var htmlTrack = ""
 
         document.querySelector('.fotoAlbum').innerHTML = ' <img src="' + data.cover_medium + '" alt="help-beatles" class="help">'
         document.querySelector('.nombreAlbum h1').innerHTML = data.title
-        document.querySelector('.subnombreAlbum h3').innerHTML = data.artist.name
+        document.querySelector('.subnombreAlbum h3').innerHTML = '<a href="detalle.html?id=' + data.artist.id + '&tipo=artist">' + data.artist.name
         document.querySelector('.estrenoAlbum h4').innerHTML = data.release_date
 
         var arrayAlbumGenero = data.genres
@@ -254,6 +242,7 @@ var htmlTrack = ""
           document.querySelector(".nombreApellido").innerHTML = result.name
           document.querySelector(".seguidoresArtista a").innerHTML = result.nb_fan + ' followers'
           // falta agragar las canciones que no las encontre en este array (supongo que habria que hacer un for para ponerlas)
+          // que las canciones vayan al detalle del track!!!
   
           
 
