@@ -109,7 +109,6 @@ main{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    height: 1265px;
 }
 
 .columna{
@@ -122,7 +121,7 @@ main{
 /* aca empieza el codigo del artista */
 
 .artista{
-    width: 49%;
+    width: 100%;
     margin-bottom: 10px;
     display: flex;
     flex-direction: column;
@@ -191,7 +190,7 @@ main{
 /* aca empieza el album */
 
 .album{
-    width: 49%;
+    width: 100%;
     margin-bottom: 10px;
     display: flex;
     flex-direction: column;
@@ -261,7 +260,7 @@ main{
 /* aca empieza el codigo de track */
 
 .track{
-    width: 49%;
+    width: 100%;
     margin-bottom: 10px;
     display: flex;
     flex-direction: column;
@@ -333,7 +332,7 @@ main{
 
 
 .genero{
-    width: 49%;
+    width: 100%;
     border: solid 3px rgb(46, 46, 46);
 }
 
@@ -453,7 +452,11 @@ footer{
         .genero .generalGenero .fotoGenero img{
             width:80px;
         }
-        .albumTrack .fotoAlbumTrack img {
+        .album .fotoAlbum img {
+            width: 112px;
+        }
+
+        .track .fotoTrack img {
             width: 112px;
         }
 
@@ -478,10 +481,16 @@ footer{
             font-size: 22px;
         }
 
-        .albumTrack .generoAlbumTrack{
+        .track .generoTrack{
             height: 32px;
             font-size: 16px;
         }
+
+        .album .generoAlbum{
+            height: 32px;
+            font-size: 16px;
+        }
+
         .propaganda img{
             height: 660px;
         }

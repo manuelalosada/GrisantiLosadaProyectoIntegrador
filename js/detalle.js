@@ -74,6 +74,10 @@ window.onload = function (){
 var id = queryStringObj.get("id")
 var tipo = queryStringObj.get("tipo")
 
+var htmlArtista = ""
+var htmlAlbum = ""
+var htmlTrack = ""
+
   if (tipo == 'track'){
   
 
@@ -85,6 +89,40 @@ var tipo = queryStringObj.get("tipo")
 
       .then(function(resultado) {
           console.log(resultado);
+
+          htmlTrack += '<div class="track>'
+
+            htmlTrack += '<div class="fotoTrack">'
+            htmlTrack += '</div>'
+
+            htmlTrack += '<div class="generalTrack">'
+
+              htmlTrack += '<div class="nombreTrack">'
+                htmlTrack+= '<h1>'
+                htmlTrack += '</h1>'
+              htmlTrack += '</div>'
+
+              htmlTrack += '<div class="subnombreTrack">'
+                htmlTrack += '<h3>'
+                htmlTrack += '</h3>'
+              htmlTrack += '</div>'
+
+              htmlTrack += '<div class="estrenoTrack">'
+                htmlTrack += '<h4>'
+                htmlTrack += '</h4>'
+              htmlTrack += '</div>'
+
+            htmlTrack += '</div>'
+
+            htmlTrack+= '<div class="generoTrack">'
+              htmlTrack += '<a>'
+              htmlTrack += '</a>'
+            htmlTrack += '</div>'
+        
+          htmlTrack += "</div>"
+
+          document.querySelector('.columna').innerHTML = htmlTrack
+
 
           document.querySelector('.nombreTrack h1').innerHTML= resultado.title
           document.querySelector('.subnombreTrack h3').innerHTML= resultado.artist.name
@@ -110,6 +148,42 @@ var tipo = queryStringObj.get("tipo")
     .then(function(data) {
         console.log(data);
 
+        // Este es el codigo que se va a ver en la pagina si toca un album
+        htmlAlbum += '<div class="album">'
+
+          htmlAlbum += '<div class="fotoAlbum">'
+          htmlAlbum += '</div>'
+
+          htmlAlbum += '<div class="generalAlbum">'
+
+            htmlAlbum += '<div class="nombreAlbum">'
+              htmlAlbum += '<h1>'
+              htmlAlbum += '</h1>'
+            htmlAlbum += '</div>'
+
+            htmlAlbum += '<div class="subnombreAlbum">'
+              htmlAlbum += '<h3>'
+              htmlAlbum += '</h3>'
+            htmlAlbum += '</div>'
+
+            htmlAlbum += '<div class="estrenoAlbum">'
+              htmlAlbum += '<h4>'
+              htmlAlbum += '</h4>'
+            htmlAlbum += '</div>'
+
+          htmlAlbum += '</div>'
+
+          htmlAlbum += '<div class="generoAlbum">'
+            htmlAlbum += '<a>'
+            htmlAlbum += '</a>'
+          htmlAlbum += '</div>'
+        
+        htmlAlbum += "</div>"
+
+        document.querySelector('.columna').innerHTML = htmlAlbum
+
+      // Aca se agrega al codigo html los datos de las canciones 
+
         document.querySelector('.fotoAlbum').innerHTML = ' <img src="' + data.cover_medium + '" alt="help-beatles" class="help">'
         document.querySelector('.nombreAlbum h1').innerHTML = data.title
         document.querySelector('.subnombreAlbum h3').innerHTML = data.artist.name
@@ -117,6 +191,9 @@ var tipo = queryStringObj.get("tipo")
 
         var arrayAlbumGenero = data.genres
         
+        // aca se agrega el codigo del genero con un for haciendo
+        // ciclos en el array
+
         for (let i = 0; i < arrayAlbumGenero.length; i++) {
           const element = arrayAlbumGenero.length[i];
 
@@ -137,12 +214,49 @@ var tipo = queryStringObj.get("tipo")
       .then(function(result){
         console.log(result);
 
-        document.querySelector(".fotoArtista").innerHTML = '<img src="' + result.picture_medium + '" alt="help-beatles" class="lewis">' 
-        document.querySelector(".nombreApellido").innerHTML = result.name
-        document.querySelector(".seguidoresArtista a").innerHTML = result.nb_fan + ' followers'
+      // Cambiamos el html para que solo aparesca el div de artista.
+
+        htmlArtista += ' <div class="artista">'
+
+          htmlArtista += '<div class="generalArtista">'
+
+            htmlArtista += '<div class="fotoArtista">'
+            htmlArtista += '</div>'
+
+            htmlArtista += '<div class="nombreApellido">'
+              htmlArtista += '<a>'
+              htmlArtista += '</a>'
+            htmlArtista += '</div>'
+
+            htmlArtista += '<div class="seguidoresArtista">'
+              htmlArtista += '<a>'
+              htmlArtista += '</a>'
+            htmlArtista += '</div>'
         
-        
+          htmlArtista += '</div>'
+
+          htmlArtista += '<div class="canciones">'
+              htmlArtista += '<div class="cancion2"> <a>Bruises - Steve Void Remix</a> </div>'
+              htmlArtista +='<div class="cancion2"> <a>Someone You Loved</a> </div>'
+              htmlArtista +='<div class="cancion2"> <a>Before You Go</a> </div>'
+              htmlArtista +='<div class="cancion2"> <a>Hold Me While You Wait</a> </div>'
+              htmlArtista +='<div class="cancion2"> <a>Grace</a> </div> '
+              htmlArtista +='<div class="cancion2"> <a>Bruises - Steve Void Remix</a> </div>'
+              htmlArtista +='<div class="cancion2"> <a>Someone You Loved</a> </div>'
+              htmlArtista +='<div class="cancion2"> <a>Before You Go</a> </div>'
+          htmlArtista += '</div>'
+
+          document.querySelector('.columna').innerHTML = htmlArtista
+
+        // Agregamos al html los datos del string.
+
+          document.querySelector(".fotoArtista").innerHTML = '<img src="' + result.picture_medium + '" alt="help-beatles" class="lewis">' 
+          document.querySelector(".nombreApellido").innerHTML = result.name
+          document.querySelector(".seguidoresArtista a").innerHTML = result.nb_fan + ' followers'
+          // falta agragar las canciones que no las encontre en este array (supongo que habria que hacer un for para ponerlas)
+  
+          
 
       })
-  }
+  } 
 }
