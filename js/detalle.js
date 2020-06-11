@@ -105,17 +105,31 @@ var htmlTrack = ""
         
           htmlTrack += "</div>"
 
-          document.querySelector('.columna').innerHTML = htmlTrack
+          var columnaDetalle = document.querySelector('.columna')
+          columnaDetalle.innerHTML = htmlTrack
 
         
 
 
-          document.querySelector('.nombreTrack h1').innerHTML= resultado.title
-          document.querySelector('.subnombreTrack h3').innerHTML=   '<a href="detalle.html?id=' + resultado.artist.id + '&tipo=artist">' + resultado.artist.name + '</a>'
-          document.querySelector('.estrenoTrack h4').innerHTML = resultado.release_date
-          // document.querySelector('.nombreAlbumTrack h3').innerHTML += '<a href="detalle.html?id=' + resultado.album.id +'&tipo=album">' + resultado.album.title +'</a>'
-          // document.querySelector('.fotoTrack').innerHTML = '<img src="' + resultado.album.cover_medium + '" alt="tango4" class="tango4"></img>'
-          // document.querySelector('.duracionTrack').innerHTML = resultado.duration;
+          var tituloTrack = document.querySelector('.nombreTrack h1')
+          tituloTrack.innerHTML= resultado.title
+
+          var subnombreTrack = document.querySelector('.subnombreTrack h3')
+          subnombreTrack.innerHTML=   '<a href="detalle.html?id=' + resultado.artist.id + '&tipo=artist">' + resultado.artist.name + '</a>'
+
+          var fechaTrack = document.querySelector('.estrenoTrack h4')
+          fechaTrack.innerHTML = resultado.release_date
+          
+          var nombreAlbumTrack = document.querySelector('.nombreAlbumTrack h3')
+          nombreAlbumTrack.innerHTML += '<a href="detalle.html?id=' + resultado.album.id +'&tipo=album">' + resultado.album.title +'</a>'
+          
+          var fotoTrack = document.querySelector('.fotoTrack')
+          fotoTrack.innerHTML = '<img src="' + resultado.album.cover_medium + '" alt="tango4" class="tango4"></img>'
+          
+          
+          var duracionTrack = document.querySelector('.duracionTrack')
+          duracionTrack.innerHTML = resultado.duration;
+
           // document.querySelector('.generoTrack a').innerHTML = resultado.NO ENCUENTRO EL GENERO
           
 
