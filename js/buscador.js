@@ -25,7 +25,9 @@ window.onload = function () {
 
     var busquedaUsuario = queryStringObj.get ('textoBuscado');
 
-    fetch('https://cors-anywhere.herokuapp.com/https://api.deezer.com/search/track?q=eminem')
+    fetch('https://cors-anywhere.herokuapp.com/https://api.deezer.com/search/track?q=' + busquedaUsuario)
+    // fetch('https://cors-anywhere.herokuapp.com/https://api.deezer.com/search/album?q=eminem')
+    // fetch('https://cors-anywhere.herokuapp.com/https://api.deezer.com/search/artist?q=eminem')
 
         .then(function(response) {
           return response.json();
@@ -34,21 +36,23 @@ window.onload = function () {
         .then(function(resultado) {
           console.log(resultado.data);
 
-          var contenido = ""
+          
           for (let i = 0; i < resultado.data.length; i++) {
               const element = resultado.data[i];
               
               var cancion = element.title
+              
 
-             
+              var nombreCancion = document.querySelector('.respuestaBuscada')
+              nombreCancion.innerHTML += cancion
           }
-
+          
 
 
         })
-        .catch (function(error){
-            console.log ('El error fue ' + error)
-        }); 
+        // .catch (function(error){
+        //     console.log ('El error fue ' + error)
+        // }); 
     
 
 
