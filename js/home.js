@@ -9,7 +9,7 @@ var topAlbum = " ";
 var topArtista = " ";
 var topTrack = " ";
 
-var carrousel = " ";
+// var carrousel = " ";
 
 fetch('https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart')
     
