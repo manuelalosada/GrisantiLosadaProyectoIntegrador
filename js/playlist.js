@@ -23,6 +23,35 @@
 
 window.onload = function () {
     
-    
+    //para obtener los datos de un track
+
+    var queryString = location.search;
+    var data = new URLSearchParams(queryString);
+    var id = datos.get('id');
+
+
+    fetch('https://cors-anywhere.herokuapp.com/https://api.deezer.com/track/' + id)
+        .then(function(response){
+            return response.json();
+        })
+        .then(function(resultado){
+            console.log(resultado);
+
+        
+            // var nombreCancion =
+        
+            var player = document.querySelector('iframe');
+            player.src = 'https://www.deezer.com/plugins/player?format=classic&autoplay=false&playlist=true&width=700&height=350&color=007FEB&layout=dark&size=medium&type=tracks&id=' + id + '&app_id=1'
+
+            
+        })
+        .catch(function (error) {
+            console.log(error);
+
+        })    
+
+
+    let recuperoStorage = localStorage.getItem('playlist');
+    let playlist = JSON.parse(recuperoStorage);
 
 }
