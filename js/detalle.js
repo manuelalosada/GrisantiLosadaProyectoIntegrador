@@ -59,7 +59,7 @@ var htmlTrack = ""
       .then(function(resultado) {
           console.log(resultado);
 
-          htmlTrack += '<div class="track>'
+          htmlTrack += '<div class="track">'
 
             htmlTrack += '<div class="fotoTrack">'
             htmlTrack += '</div>'
@@ -100,7 +100,7 @@ var htmlTrack = ""
 
             htmlAlbum += ' <form action = "playlist.html" method = "GET">' 
               htmlAlbum += '<button type = "submit"> Add to playlist </button>'
-              htmlAlbum += '<input type = "text" name = "cancionAgregada">'
+              htmlAlbum += '<input type = "text" id="btnAddToPlaylist" name = "cancionAgregada">'
             htmlAlbum += '</form>'
         
           htmlTrack += "</div>"
@@ -135,9 +135,6 @@ var htmlTrack = ""
 
       })
 
-      // .catch (function(error){
-      //       console.log ('El error fue ' + error)
-      // }); 
 
     }else if (tipo == "album"){
 
@@ -261,5 +258,18 @@ var htmlTrack = ""
           
 
       })
-  } 
+      //hacer lo mismo pero con generos
+  // } else if (tipo == 'genero'){
+  //   fetch('https://cors-anywhere.herokuapp.com/https://api.deezer.com/genre/' + id)
+
+  //     .then(function(response){
+  //       return response.json();
+  //     })
+
+  //     .then(function(result){
+  //       console.log(result);
+
+
+  // })
+  }
 }
