@@ -76,15 +76,15 @@ var htmlTrack = ""
                 htmlTrack += '</h3>'
               htmlTrack += '</div>'
 
-              htmlAlbum += '<div class="nombreAlbumTrack"'
-                htmlAlbum += '<h3>Album:'
-                htmlAlbum += '</h3>'
-              htmlAlbum += '</div>'
+              htmlTrack += '<div class="nombreAlbumTrack">'
+                htmlTrack += '<h3>Album:'
+                htmlTrack += '</h3>'
+                htmlTrack += '</div>'
               
-              htmlAlbum += '<div class="duracionTrack">'
-                htmlAlbum += '<h3>Duration: ' 
-                htmlAlbum += '</h3>'
-              htmlAlbum += '</div>'
+                htmlTrack += '<div class="duracionTrack">'
+                htmlTrack += '<h3>Duration: ' 
+                htmlTrack += '</h3>'
+                htmlTrack += '</div>'
 
               htmlTrack += '<div class="estrenoTrack">'
                 htmlTrack += '<h4>Release Date: '
@@ -98,10 +98,9 @@ var htmlTrack = ""
               htmlTrack += '</a>'
             htmlTrack += '</div>'
 
-            htmlAlbum += ' <form action = "playlist.html" method = "GET">' 
-              htmlAlbum += '<button type = "submit"> Add to playlist </button>'
-              htmlAlbum += '<input type = "text" id="btnAddToPlaylist" name = "cancionAgregada">'
-            htmlAlbum += '</form>'
+            htmlTrack += ' <form action = "playlist.html" method = "GET">' 
+            htmlTrack += '<button type = "submit" id="btnAddToPlaylist"> Add to Playlist </button>'
+            htmlTrack += '</form>'
         
           htmlTrack += "</div>"
 
@@ -118,7 +117,7 @@ var htmlTrack = ""
           subnombreTrack.innerHTML=   '<a href="detalle.html?id=' + resultado.artist.id + '&tipo=artist">' + resultado.artist.name + '</a>'
 
           var fechaTrack = document.querySelector('.estrenoTrack h4')
-          fechaTrack.innerHTML = resultado.release_date
+          fechaTrack.innerHTML += resultado.release_date
           
           var nombreAlbumTrack = document.querySelector('.nombreAlbumTrack h3')
           nombreAlbumTrack.innerHTML += '<a href="detalle.html?id=' + resultado.album.id +'&tipo=album">' + resultado.album.title +'</a>'
@@ -127,11 +126,42 @@ var htmlTrack = ""
           fotoTrack.innerHTML = '<img src="' + resultado.album.cover_medium + '" alt="tango4" class="tango4"></img>'
           
           
-          var duracionTrack = document.querySelector('.duracionTrack')
-          duracionTrack.innerHTML = resultado.duration;
+          var duracionTrack = document.querySelector('.duracionTrack h3')
+          duracionTrack.innerHTML += resultado.duration;
 
           // document.querySelector('.generoTrack a').innerHTML = resultado.NO ENCUENTRO EL GENERO
           
+          
+         
+
+          var boton = decument.querySelector('#btnAddToPlaylist')
+          boton.addEventListener('click', function(){
+
+          var recuperado = localStorage.getItem('playlist');
+      
+            if(recuperado == null){ 
+              playlist = [];
+          } else {
+              playlist = JSON.parse(recuperado); 
+          }
+          
+          if(playlist.includes(id)){
+            indiceDelArray = playlist.indexOf(id)
+            var removed = playlist.splice(indiceDelArray,1);
+      
+          } else {
+            playlist.push(id)
+          }
+          recuperado = localStorage.setItem('playlist');
+
+            
+          })
+
+          if(playlist.includes(id)){
+            document.querySelector('#btnAddToPlaylist').innerHTML = "Delete from Playlist";
+          } else {
+            document.querySelector('#btnAddToPlaylist').innerHTML = 'Add to Playlist';          
+          }
 
       })
 
@@ -273,3 +303,16 @@ var htmlTrack = ""
   // })
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
