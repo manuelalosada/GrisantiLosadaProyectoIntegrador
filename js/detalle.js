@@ -46,6 +46,7 @@ var tipo = queryStringObj.get("tipo")
 var htmlArtista = ""
 var htmlAlbum = ""
 var htmlTrack = ""
+var htmlGenero = ""
 
   if (tipo == 'track'){
   
@@ -282,27 +283,71 @@ var htmlTrack = ""
           document.querySelector(".fotoArtista").innerHTML = '<img src="' + result.picture_medium + '" alt="help-beatles" class="lewis">' 
           document.querySelector(".nombreApellido").innerHTML = result.name
           document.querySelector(".seguidoresArtista a").innerHTML = result.nb_fan + ' followers'
+          
           // falta agragar las canciones que no las encontre en este array (supongo que habria que hacer un for para ponerlas)
           // que las canciones vayan al detalle del track!!!
+
+          // idArtista = result.id
+          // fetch ('https://cors-anywhere.herokuapp.com/https://api.deezer.com/artists/' + idArtista + "/top")
   
-          
+          // .then(function(response){
+          //     return response.json();
+          //   })
+      
+          //   .then(function(datos){
+          //     console.log(datos);
+      
+          //   })
 
       })
       //hacer lo mismo pero con generos
-  // } else if (tipo == 'genero'){
-  //   fetch('https://cors-anywhere.herokuapp.com/https://api.deezer.com/genre/' + id)
+  } else if (tipo == 'genero'){
+    fetch('https://cors-anywhere.herokuapp.com/https://api.deezer.com/genre/' + id)
 
-  //     .then(function(response){
-  //       return response.json();
-  //     })
+      .then(function(response){
+        return response.json();
+      })
 
-  //     .then(function(result){
-  //       console.log(result);
+      .then(function(datos){
+        console.log(datos);
 
+        htmlGenero += '<div class="generalGenero">'
+            htmlGenero += '<div class="fotoGenero">'
+            htmlGenero += '</div>'
+            htmlGenero += '<div class="nombreGenero">'
+              htmlGenero += '<a> </a>'
+            htmlGenero += '</div>'
+        htmlGenero += '</div>'
 
-  // })
+        htmlGenero += ' <div class="canciones">'
+          htmlGenero += '<div class="cancion2"> <a>Nombre de la cancion</a> </div>'
+          htmlGenero +='<div class="cancion2"> <a>Nombre de la cancion</a> </div>'
+          htmlGenero +='<div class="cancion2"> <a>Nombre de la cancion</a> </div>'
+          htmlGenero +='<div class="cancion2"> <a>Nombre de la cancion</a> </div>'
+          htmlGenero +='<div class="cancion2"> <a>Nombre de la cancion</a> </div>'
+        htmlGenero += '</div>'
+     
+        document.querySelector('.columna').innerHTML = htmlGenero
+
+        document.querySelector('.nombreGenero a').innerHTML = datos.name
+        document.querySelector('.fotoGenero').innerHTML = '<img src="' + datos.picture_medium + '"alt="' + datos.name + '">'
+
+        idGenero = datos.id
+
+      // fetch ('https://cors-anywhere.herokuapp.com/https://api.deezer.com/genre/' + idGenero + "/top")
+
+      // .then(function(response){
+      //   return response.json();
+      // })
+
+      // .then(function(datos){
+      //   console.log(datos);
+
+      // })
+  })
   }
 }
+
 
 
 
