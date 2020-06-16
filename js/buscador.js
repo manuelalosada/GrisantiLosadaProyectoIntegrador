@@ -60,17 +60,14 @@ window.onload = function () {
                         contenidoCancion += '</div>'
                     contenidoCancion += '</div>'
                    
-                  contenidoCancion += '<div class="canciones"> <a> Artista: ' +  nombreCancion + '</a>  </div>'
+                  contenidoCancion += '<div class="canciones"> <a href="detalle.html?id=' + busquedaUsuario +'"> Artista: ' +  nombreCancion + '</a>  </div>'
                   contenidoCancion += '<div class="cancion"> <a> Duracion: ' + nombreAlbumCancion + '</a> </div>'
                   contenidoCancion += '<div class="cancion"> <a> Album: ' + nombreArtistaCancion + '</a> </div>'
                   
                 contenidoCancion += '</div>'
               contenidoCancion += '</li>'
             
-              // <li>
-              // <h3>Respuesta 1</h3>
-
-              // <div class="genero">
+             
 
 
               var nombreCancion = document.querySelector('.resultadoBusqueda')
