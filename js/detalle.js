@@ -46,6 +46,7 @@ var tipo = queryStringObj.get("tipo")
 var htmlArtista = ""
 var htmlAlbum = ""
 var htmlTrack = ""
+var htmlGenero = ""
 
   if (tipo == 'track'){
   
@@ -59,7 +60,7 @@ var htmlTrack = ""
       .then(function(resultado) {
           console.log(resultado);
 
-          htmlTrack += '<div class="track>'
+          htmlTrack += '<div class="track">'
 
             htmlTrack += '<div class="fotoTrack">'
             htmlTrack += '</div>'
@@ -76,15 +77,15 @@ var htmlTrack = ""
                 htmlTrack += '</h3>'
               htmlTrack += '</div>'
 
-              htmlAlbum += '<div class="nombreAlbumTrack"'
-                htmlAlbum += '<h3>Album:'
-                htmlAlbum += '</h3>'
-              htmlAlbum += '</div>'
+              htmlTrack += '<div class="nombreAlbumTrack">'
+                htmlTrack += '<h3>Album:'
+                htmlTrack += '</h3>'
+                htmlTrack += '</div>'
               
-              htmlAlbum += '<div class="duracionTrack">'
-                htmlAlbum += '<h3>Duration: ' 
-                htmlAlbum += '</h3>'
-              htmlAlbum += '</div>'
+                htmlTrack += '<div class="duracionTrack">'
+                htmlTrack += '<h3>Duration: ' 
+                htmlTrack += '</h3>'
+                htmlTrack += '</div>'
 
               htmlTrack += '<div class="estrenoTrack">'
                 htmlTrack += '<h4>Release Date: '
@@ -98,10 +99,9 @@ var htmlTrack = ""
               htmlTrack += '</a>'
             htmlTrack += '</div>'
 
-            htmlAlbum += ' <form action = "playlist.html" method = "GET">' 
-              htmlAlbum += '<button type = "submit"> Add to playlist </button>'
-              htmlAlbum += '<input type = "text" name = "cancionAgregada">'
-            htmlAlbum += '</form>'
+            htmlTrack += ' <form action = "playlist.html" method = "GET">' 
+            htmlTrack += '<button type = "submit" id="btnAddToPlaylist"> Add to Playlist </button>'
+            htmlTrack += '</form>'
         
           htmlTrack += "</div>"
 
@@ -118,7 +118,7 @@ var htmlTrack = ""
           subnombreTrack.innerHTML=   '<a href="detalle.html?id=' + resultado.artist.id + '&tipo=artist">' + resultado.artist.name + '</a>'
 
           var fechaTrack = document.querySelector('.estrenoTrack h4')
-          fechaTrack.innerHTML = resultado.release_date
+          fechaTrack.innerHTML += resultado.release_date
           
           var nombreAlbumTrack = document.querySelector('.nombreAlbumTrack h3')
           nombreAlbumTrack.innerHTML += '<a href="detalle.html?id=' + resultado.album.id +'&tipo=album">' + resultado.album.title +'</a>'
@@ -127,17 +127,45 @@ var htmlTrack = ""
           fotoTrack.innerHTML = '<img src="' + resultado.album.cover_medium + '" alt="tango4" class="tango4"></img>'
           
           
-          var duracionTrack = document.querySelector('.duracionTrack')
-          duracionTrack.innerHTML = resultado.duration;
+          var duracionTrack = document.querySelector('.duracionTrack h3')
+          duracionTrack.innerHTML += resultado.duration;
 
           // document.querySelector('.generoTrack a').innerHTML = resultado.NO ENCUENTRO EL GENERO
           
+          
+         
+
+          var boton = decument.querySelector('#btnAddToPlaylist')
+          boton.addEventListener('click', function(){
+
+          var recuperado = localStorage.getItem('playlist');
+      
+            if(recuperado == null){ 
+              playlist = [];
+          } else {
+              playlist = JSON.parse(recuperado); 
+          }
+          
+          if(playlist.includes(id)){
+            indiceDelArray = playlist.indexOf(id)
+            var removed = playlist.splice(indiceDelArray,1);
+      
+          } else {
+            playlist.push(id)
+          }
+          recuperado = localStorage.setItem('playlist');
+
+            
+          })
+
+          if(playlist.includes(id)){
+            document.querySelector('#btnAddToPlaylist').innerHTML = "Delete from Playlist";
+          } else {
+            document.querySelector('#btnAddToPlaylist').innerHTML = 'Add to Playlist';          
+          }
 
       })
 
-      // .catch (function(error){
-      //       console.log ('El error fue ' + error)
-      // }); 
 
     }else if (tipo == "album"){
 
@@ -255,11 +283,81 @@ var htmlTrack = ""
           document.querySelector(".fotoArtista").innerHTML = '<img src="' + result.picture_medium + '" alt="help-beatles" class="lewis">' 
           document.querySelector(".nombreApellido").innerHTML = result.name
           document.querySelector(".seguidoresArtista a").innerHTML = result.nb_fan + ' followers'
+          
           // falta agragar las canciones que no las encontre en este array (supongo que habria que hacer un for para ponerlas)
           // que las canciones vayan al detalle del track!!!
+
+          // idArtista = result.id
+          // fetch ('https://cors-anywhere.herokuapp.com/https://api.deezer.com/artists/' + idArtista + "/top")
   
-          
+          // .then(function(response){
+          //     return response.json();
+          //   })
+      
+          //   .then(function(datos){
+          //     console.log(datos);
+      
+          //   })
 
       })
-  } 
+      //hacer lo mismo pero con generos
+  } else if (tipo == 'genero'){
+    fetch('https://cors-anywhere.herokuapp.com/https://api.deezer.com/genre/' + id)
+
+      .then(function(response){
+        return response.json();
+      })
+
+      .then(function(datos){
+        console.log(datos);
+
+        htmlGenero += '<div class="generalGenero">'
+            htmlGenero += '<div class="fotoGenero">'
+            htmlGenero += '</div>'
+            htmlGenero += '<div class="nombreGenero">'
+              htmlGenero += '<a> </a>'
+            htmlGenero += '</div>'
+        htmlGenero += '</div>'
+
+        htmlGenero += ' <div class="canciones">'
+          htmlGenero += '<div class="cancion2"> <a>Nombre de la cancion</a> </div>'
+          htmlGenero +='<div class="cancion2"> <a>Nombre de la cancion</a> </div>'
+          htmlGenero +='<div class="cancion2"> <a>Nombre de la cancion</a> </div>'
+          htmlGenero +='<div class="cancion2"> <a>Nombre de la cancion</a> </div>'
+          htmlGenero +='<div class="cancion2"> <a>Nombre de la cancion</a> </div>'
+        htmlGenero += '</div>'
+     
+        document.querySelector('.columna').innerHTML = htmlGenero
+
+        document.querySelector('.nombreGenero a').innerHTML = datos.name
+        document.querySelector('.fotoGenero').innerHTML = '<img src="' + datos.picture_medium + '"alt="' + datos.name + '">'
+
+        idGenero = datos.id
+
+      // fetch ('https://cors-anywhere.herokuapp.com/https://api.deezer.com/genre/' + idGenero + "/top")
+
+      // .then(function(response){
+      //   return response.json();
+      // })
+
+      // .then(function(datos){
+      //   console.log(datos);
+
+      // })
+  })
+  }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
