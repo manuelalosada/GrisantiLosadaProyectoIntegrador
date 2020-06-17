@@ -157,8 +157,13 @@ main{
     padding-left: 12px;
 }
 
-.rankings .rankingTrack .listadoTrack li a{
+.rankings .rankingTrack .listadoTrack li .trackName{
     color: lightseagreen;
+    text-decoration: none;
+}
+
+.rankings .rankingTrack .listadoTrack li .trackArtistName{
+    color: white;
     text-decoration: none;
 }
 
@@ -197,9 +202,14 @@ main{
     padding-left: 12px;
 }
 
-.rankings .rankingAlbum .listadoAlbum li a{
+.rankings .rankingAlbum .listadoAlbum li .albumName{
     color: lightseagreen;
     text-decoration: none;
+}
+
+.rankings .rankingAlbum .listadoAlbum li .albumArtistName{
+    text-decoration: none;
+    color: white;
 }
 /* codigo del ranking de artistas */
 

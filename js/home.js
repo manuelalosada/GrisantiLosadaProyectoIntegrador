@@ -28,10 +28,11 @@ fetch('https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart')
             const element = arrayAlbum[i];
             
             var nombreAlbum = element.title;
+            var nombreArtistaAlbum = element.artist.name;
 
-            var nombreArtistaAlbum = element.artist.name
 
-            topAlbum += '<li> <a href="detalle.html?id=' + element.id + '&tipo=album">' + nombreAlbum + '</a> - ' + nombreArtistaAlbum + ' </li>'
+            topAlbum += '<li> <a href="detalle.html?id=' + element.id + '&tipo=album" class="albumName">' + nombreAlbum + ' </a>'
+            topAlbum +=  '<a href="detalle.html?id=' + element.artist.id + '&tipo=artist" class="albumArtistName"> - ' + nombreArtistaAlbum + '</a> </li>'
 
             document.querySelector('.listadoAlbum').innerHTML = topAlbum;
         }
@@ -69,11 +70,14 @@ fetch('https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart')
 
             var nombreArtistaTrack = element.artist.name
 
-            topTrack += '<li> <a href="detalle.html?id=' + element.id + '&tipo=track">' + tituloTrack + '</a> - ' + nombreArtistaTrack + '</li>'
+
+            topTrack += '<li> <a href="detalle.html?id=' + element.id + '&tipo=track" class="trackName">' + tituloTrack + ' </a>'
+            topTrack +=  '<a href="detalle.html?id=' + element.artist.id + '&tipo=artist" class="trackArtistName"> - ' +nombreArtistaTrack + '</a> </li>'
 
             document.querySelector('.listadoTrack').innerHTML = topTrack;
             
         }
+        
 
 
         
