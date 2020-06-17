@@ -25,9 +25,9 @@ window.onload = function () {
     
     //para obtener los datos de un track
     
-    // var queryString = location.search;
-    // var data = new URLSearchParams(queryString);
-    // var id = datos.get('id');
+            var queryString = location.search;
+            var data = new URLSearchParams(queryString);
+            var id = data.get('id');
    
 
 
@@ -57,7 +57,7 @@ window.onload = function () {
 
    
 
-    var listadoPlaylist =document.querySelector('.listadoPLaylist')
+    var listadoPlaylist =document.querySelector('.listadoPlaylist')
 
     if (recuperado == null || recuperado == "[]"){
         playlist= [];
@@ -76,7 +76,8 @@ window.onload = function () {
             return response.json();
         })
         .then(function (track) {
-            listadoPlaylist.innerHTML += '<li>' + '<a href="track.html?id=' + track.id + '">' + track.title + '</a></li>' 
+            // var listadoPlaylist =document.querySelector('.listadoPlaylist')
+            listadoPlaylist.innerHTML += '<li>' + '<a href="detalle.html?id=' + track.id + '&tipo=track">' + track.title + '</a></li>' 
         })
 
         .catch(function(errors){
@@ -84,9 +85,6 @@ window.onload = function () {
             
         })
     
-    
-    
-
-    
+    }
 
 }
