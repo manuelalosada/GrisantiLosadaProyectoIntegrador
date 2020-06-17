@@ -176,7 +176,7 @@ main{
     
 }
 
-.artista .canciones .cancion2{
+.artista .canciones .cancionArtista{
     background-color:rgb(59, 59, 59);
     width: 100%;
     height: 30px;
@@ -374,7 +374,7 @@ main{
     
 }
 
-.genero .canciones .cancion2{
+.genero .canciones .cancionGenero{
     background-color:rgb(59, 59, 59);
     width: 100%;
     height: 30px;
