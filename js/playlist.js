@@ -77,7 +77,8 @@ window.onload = function () {
         })
         .then(function (track) {
             // var listadoPlaylist =document.querySelector('.listadoPlaylist')
-            listadoPlaylist.innerHTML += '<li>' + '<a href="detalle.html?id=' + track.id + '&tipo=track">' + track.title + '</a></li>' 
+            console.log(track)
+            listadoPlaylist.innerHTML += '<li>' + '<a href="detalle.html?id=' + track.id + '&tipo=track" class="nombreCancion">' + track.title + '</a> <a href="detalle.html?id=' + track.id + '&tipo=track" class="nombreArtista"</li>' 
         })
 
         .catch(function(errors){

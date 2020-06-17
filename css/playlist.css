@@ -69,7 +69,7 @@ header{
     text-transform: uppercase;
 }
 
-.barraNavegacion ul li a{
+.barraNavegacion ul li .nombreCancion{
     width: 100%;
     text-decoration: none;
 }
