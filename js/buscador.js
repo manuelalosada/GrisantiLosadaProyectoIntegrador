@@ -27,7 +27,7 @@ window.onload = function () {
 
     fetch('https://cors-anywhere.herokuapp.com/https://api.deezer.com/search/track?q=' + busquedaUsuario)
     
-    // fetch('https://cors-anywhere.herokuapp.com/https://api.deezer.com/search/artist?q=eminem')
+    
 
         .then(function(response) {
           return response.json();
@@ -145,6 +145,67 @@ window.onload = function () {
 
 
         })
+
+        //BUSCAR ARTISTA 
+
+         fetch('https://cors-anywhere.herokuapp.com/https://api.deezer.com/search/artist?q=' + busquedaUsuario)
+
+         .then(function(response) {
+          return response.json();
+         })
+
+        .then(function(resultado) {
+          console.log(resultado.data);
+
+          var contenidoArtista = ""
+
+          
+          for (let i = 0; i < resultado.data.length; i++) {
+              const element = resultado.data[i];
+              console.log(element)
+              var nombreArtista = element.data.title
+              var fotoAlbumArtista = element.data.cover
+              var cantidadCanciones = element.data.nb_tracks
+              var tipoArtista = element.data.record_type
+              
+
+
+              contenidoArtista += '<li>'
+              contenidoArtista += '<h3> Respuesta </h3>'
+              contenidoArtista += '<div class="genero">'
+              contenidoArtista += '<div class="generalGenero">'
+              contenidoArtista += '<div class="fotoGenero">'
+              contenidoArtista += '<img src="' + fotoAlbumArtista + '" alt="' + nombreArtista + '">'
+              contenidoArtista += '</div>'
+              contenidoArtista += '<div class="nombreGenero"><a>' + nombreArtista + '</a>'
+              contenidoArtista += '</div>'
+              contenidoArtista += '</div>'
+                   
+              contenidoArtista += '<div class="canciones"> <a href="detalle.html?id=' + busquedaUsuario +'"> Cantidad de Canciones: ' +  cantidadCanciones + '</a>  </div>'
+              contenidoArtista += '<div class="cancion"> <a> Tipo de Artista: ' + nombreAlbumCancion + '</a> </div>'
+              // contenidoArtista += '<div class="cancion"> <a> Artista: ' + nombreArtistaCancion + '</a> </div>'
+                  
+              contenidoArtista += '</div>'
+              contenidoArtista += '</li>'
+            
+             
+
+
+              var nombreCancion = document.querySelector('.resultadoBusqueda')
+              
+              nombreCancion.innerHTML = contenidoCancion
+          }
+
+          
+
+
+          
+          
+
+
+        })
+
+
 
 
     
