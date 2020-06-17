@@ -68,6 +68,7 @@ window.onload = function () {
         });
     }
 
+    var contenido = ''
     function showTrack(id){
 
         fetch ('https://cors-anywhere.herokuapp.com/https://api.deezer.com/track/' + id)
@@ -77,7 +78,18 @@ window.onload = function () {
         })
         .then(function (track) {
             // var listadoPlaylist =document.querySelector('.listadoPlaylist')
-            listadoPlaylist.innerHTML += '<li>' + '<a href="detalle.html?id=' + track.id + '&tipo=track">' + track.title + '</a></li>' 
+            console.log(track)
+            
+            contenido +='<li>'
+            contenido += '<a href="detalle.html?id=' + track.id + '&tipo=track" class="nombreCancion">' + track.title + '</a>' 
+            contenido += '<a href="detalle.html?id=' + track.artist.id + '&tipo=artist" class="nombreArtista">' + track.artist.name +'</a>' 
+            contenido += '<a href="detalle.html?id=' + track.album.id + '&tipo=album" class="nombreAlbum">' + track.album.title + '</a>' 
+            contenido += '<a>' + track.duration + '</a>' 
+            contenido += '<a>' + track.release_date + '</a>' 
+            contenido += '<a> Remove</a>' 
+            contenido += '</li>' 
+
+            listadoPlaylist.innerHTML += contenido
         })
 
         .catch(function(errors){
