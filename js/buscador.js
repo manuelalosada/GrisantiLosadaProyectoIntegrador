@@ -41,7 +41,9 @@ window.onload = function () {
           
           for (let i = 0; i < resultado.data.length; i++) {
               const element = resultado.data[i];
+              
               console.log(element)
+
               var nombreCancion = element.title
               var fotoAlbumCancion = element.album.cover
               var nombreAlbumCancion = element.album.title
@@ -60,7 +62,7 @@ window.onload = function () {
                         contenidoCancion += '</div>'
                     contenidoCancion += '</div>'
                    
-                  contenidoCancion += '<div class="canciones"> <a href="detalle.html?id=' + busquedaUsuario +'"> Cancion: ' +  nombreCancion + '</a>  </div>'
+                  contenidoCancion += '<div class="canciones"> Cancion: <a href="detalle.html?id=' + busquedaUsuario +'"> ' +  nombreCancion + '</a>  </div>'
                   contenidoCancion += '<div class="cancion"> <a> Album: ' + nombreAlbumCancion + '</a> </div>'
                   contenidoCancion += '<div class="cancion"> <a> Artista: ' + nombreArtistaCancion + '</a> </div>'
                   
@@ -160,9 +162,9 @@ window.onload = function () {
           for (let i = 0; i < resultado.data.length; i++) {
               const element = resultado.data[i];
               console.log(element)
-              var nombreArtista = element.data.title
-              var fotoAlbumArtista = element.data.cover
-              var cantidadCanciones = element.data.nb_tracks
+              var nombreArtista = element.name
+              var fotoAlbumArtista = element.cover
+              var cantidadCanciones = element.nb_tracks
               var tipoArtista = element.data.record_type
               
 

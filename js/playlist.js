@@ -22,28 +22,32 @@ window.onload = function () {
         playlist.forEach(function(id){ //esta funcion va a representar cada elemento del array
             showTrack(id)
         });
+
           // BOTON REMOVE FROM PLAYLIST
 
-          var boton = document.querySelector('#btnRemoveTrack')
-          boton.addEventListener('click', function(e){
+          var boton = document.querySelectorAll('.btnRemoveTrack')
 
-          e.preventDefault()
-            var trackId = this.id
-          var recuperado = sessionStorage.getItem('playlist');
-          playlist = JSON.parse(recuperado); 
-      
-          indiceDelArray = playlist.indexOf(trackId)
-          playlist.splice(indiceDelArray,1);
+            for (let i = 0; i < boton.length; i++) {
+                const element = boton[i];
+                
+                element.addEventListener('click', function(e){
+
+                    e.preventDefault()
+                    
+                    var idTrack = this.id
+                    var recuperado = sessionStorage.getItem('playlist');
+                    playlist = JSON.parse(recuperado); 
+                
+                    indiceDelArray = playlist.indexOf(idTrack)
+                    playlist.splice(indiceDelArray,1);
+                    
+            
+                    sessionStorage.setItem('playlist', JSON.stringify(playlist));
+                    location.reload()
           
-  
-          sessionStorage.setItem('playlist', JSON.stringify(playlist));
-            location.reload()
-          // let indiceEnArray = playlist.indexOf(idTrack);
-          // playlist.splice(indiceEnArray, 1);
-          // document.querySelector('#btnAddToPlaylist').innerHTML = "Agregar a playlist";
-          // console.log(playlist);
-
-          })
+                    })
+            }
+         
     }
 
     var contenido = ''
@@ -66,8 +70,8 @@ window.onload = function () {
 
             
             contenido +='<li>'
-            contenido += '<iframe scrolling="no" frameborder="0" allowTransparency="true" src="https://www.deezer.com/plugins/player?format=square&autoplay=false&playlist=false&width=50&height=50&color=007FEB&layout=dark&size=medium&type=tracks&id=' + trackId + '&app_id=1" width="75" height="75"></iframe>';
-            contenido += '<a href="detalle.html?id=' + track.id + '&tipo=track" class="nombreCancion">' + track.title + '</a>' 
+            contenido += '<img src="' + track.album.cover_small + '" alt="' + track.title + '" class=imgTrack id=' + track.id + 'height="50" width="50">'
+            contenido += '<a href="detalle.html?id=' + track.id + '&tipo=track" class="nombreCancion" >' + track.title + '</a>' 
             contenido += '<a href="detalle.html?id=' + track.artist.id + '&tipo=artist" class="nombreArtista">' + track.artist.name +'</a>' 
             contenido += '<a href="detalle.html?id=' + track.album.id + '&tipo=album" class="nombreAlbum">' + track.album.title + '</a>' 
             contenido += '<a>' + minutesTrack + ' mins ' + secondsTrack + ' secs </a>' 
@@ -82,7 +86,21 @@ window.onload = function () {
            
             listadoPlaylist.innerHTML += contenido
         
-          
+            //IFRAME 
+
+            var iframePlayer = document.querySelectorAll('.imgTrack')
+
+            for (let i = 0; i < iframePlayer.length; i++) {
+                const element = iframePlayer[i];
+                
+                element.addEventListener('click', function(e){
+
+                    e.preventDefault()
+
+                    var idTrackImg = this.id
+                    document.querySelector('iframe src').innerhtml = 'https://www.deezer.com/plugins/player?format=square&autoplay=false&playlist=false&width=300&height=300&color=007FEB&layout=dark&size=medium&type=tracks&id=' + idTrackImg + '&app_id=1'
+                })
+            }
 
         })
 
