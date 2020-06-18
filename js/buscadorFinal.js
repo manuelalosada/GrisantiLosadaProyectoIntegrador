@@ -9,8 +9,8 @@
 //        10 artistas que pertenezcan a ese género 
 
 
-
-
+href="detalle.html?id=' + element.artist.id +'&tipo=artist
+href="detalle.html?id=' + element.id + '&tipo=track
       
 window.onload = function (){
 
