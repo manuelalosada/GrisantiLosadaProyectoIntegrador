@@ -89,7 +89,7 @@ var htmlGenero = ""
           
           var tiempoTrack = resultado.duration
           var minutesTrack = Math.floor(tiempoTrack / 60);
-          var secondsTrack = segundosTrack - (minutes * 60);
+          var secondsTrack = tiempoTrack - (minutesTrack * 60);
 
           var duracionTrack = document.querySelector('.duracionTrack h3')
           duracionTrack.innerHTML += minutesTrack + ' mins ' + secondsTrack + ' secs';

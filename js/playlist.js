@@ -66,7 +66,7 @@ window.onload = function () {
 
             var tiempoTrack = track.duration
             var minutesTrack = Math.floor( tiempoTrack / 60);
-            var secondsTrack = segundosTrack - (minutes * 60);
+            var secondsTrack = tiempoTrack - (minutesTrack * 60);
 
             
             contenido +='<li>'
