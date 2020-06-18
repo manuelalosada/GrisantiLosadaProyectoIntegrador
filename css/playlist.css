@@ -169,6 +169,7 @@ main{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     text-align: center;
+    justify-content: center;
 }
 
 .playlist .canciones ol li .trackPlayer{

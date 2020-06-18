@@ -73,11 +73,6 @@ var htmlGenero = ""
 
             htmlTrack += '</div>'
 
-            htmlTrack += '<div class="generoTrack">'
-              htmlTrack += '<a>'
-              htmlTrack += '</a>'
-            htmlTrack += '</div>'
-
             htmlTrack += ' <form action = "playlist.html" method = "GET" id="addPlaylistForm">' 
             htmlTrack += '<button type = "button" id="btnAddToPlaylist"> Add to Playlist </button>'
             htmlTrack += '</form>'
@@ -110,55 +105,89 @@ var htmlGenero = ""
           duracionTrack.innerHTML += resultado.duration;
 
           
-
-          function getFloor(x) {
-            return Math.floor(resultado.duration/60);
-         }
-
           
-          // NO ENCUENTRO EL GENERO
+          var idTrack = resultado.id
 
-          // var idTrack = resultado.id
+          let recuperoStorage = sessionStorage.getItem('playlist');
 
-          // fetch('https://cors-anywhere.herokuapp.com/https://api.deezer.com/track/' + idTrack + )
-
-          // .then(function(response){
-          //   return response.json();
-          // })
-             
-          // .then(function(datos){
-          //   console.log(datos)
-
-          //   })
-          
-          
-    
-          var boton = document.querySelector('#btnAddToPlaylist')
-          boton.addEventListener('click', function(e){
-
-          e.preventDefault()
-
-          var recuperado = localStorage.getItem('playlist');
-      
-            if(recuperado == null){ 
+          if(recuperoStorage == null){
               playlist = [];
           } else {
-              playlist = JSON.parse(recuperado); 
+              playlist = JSON.parse(recuperoStorage);
           }
-          
-          if(playlist.includes(id)){
-            indiceDelArray = playlist.indexOf(id)
-            var removed = playlist.splice(indiceDelArray,1);
-      
-          } else {
-            playlist.push(id)  
 
+          if(playlist.includes == idTrack){
+              document.querySelector('#btnAddToPlaylist').innerHTML = "Delete from playlist";
           }
-          recuperado = localStorage.setItem('playlist');
+
+
+          let agregar = document.querySelector('#btnAddToPlaylist');
+
+          agregar.addEventListener('click', function(e){
+
+              e.preventDefault();
+
+              if(playlist == idTrack){
+                
+                  let indiceEnArray = playlist.indexOf(idTrack);
+                  playlist.splice(indiceEnArray, 1);
+                  document.querySelector('#btnAddToPlaylist').innerHTML = "Agregar a playlist";
+                  console.log(playlist);
+                  
+              } else { 
+            
+                  playlist.push(idTrack);
+                  document.querySelector('#btnAddToPlaylist').innerHTML = "Quitar de la playlist"
+              }
+
+
+
+              let playlistParaStorage = JSON.stringify(playlist);
+              sessionStorage.setItem('playlist', playlistParaStorage);
+              console.log(sessionStorage);
+
+
+          })
+
+      })
+    
+          
+
+        //   // function getFloor(x) {
+        //   //   return Math.floor(resultado.duration/60);
+        //  }
+          
+
+
+
+
+
+          // var boton = document.querySelector('#btnAddToPlaylist')
+          // boton.addEventListener('click', function(e){
+
+          //   e.preventDefault()
+
+          // var recuperado = sessionStorage.getItem('playlist');
+      
+          //   if(recuperado == null){ 
+          //     playlist = [];
+          // } else {
+          //     playlist = JSON.parse(recuperado)
+          // }
+          
+          // if(playlist.includes(id)){
+          //   indiceDelArray = playlist.indexOf(id)
+          //   playlist.splice(indiceDelArray,1);
+
+          // } else {
+          //   playlist.push(id)  
+
+          // }
+          // sessionStorage.setItem('playlist', JSON.stringify(playlist));
 
          
             
-          })
+          // })
 
           // if(playlist.includes(id)){
           //   document.querySelector('#btnAddToPlaylist').innerHTML = "Delete from Playlist";
@@ -168,7 +197,7 @@ var htmlGenero = ""
 
 
           
-      })
+      // })
 
 
     }else if (tipo == "album"){

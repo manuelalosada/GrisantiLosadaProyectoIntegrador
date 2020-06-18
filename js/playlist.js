@@ -25,15 +25,15 @@ window.onload = function () {
             // var data = new URLSearchParams(queryString);
             // var id = data.get('id');
    
-    var recuperado = localStorage.getItem('playlist');
-    var playlist = JSON.parse(recuperado);
+    var recuperado = sessionStorage.getItem('playlist');
+    var playlist = JSON.parse(recuperado)
 
    
 
-    var listadoPlaylist =document.querySelector('.listadoPlaylist')
+    var listadoPlaylist = document.querySelector('.listadoPlaylist')
 
     if (recuperado == null || recuperado == "[]"){
-        playlist= [];
+        playlist = [];
         listadoPlaylist.innerHTML += '<li> No song found in your Playlist </li>' 
     } else {
         playlist.forEach(function(id){ //esta funcion va a representar cada elemento del array
@@ -51,9 +51,12 @@ window.onload = function () {
         })
         .then(function (track) {
             console.log(track)
+
+            var trackId = track.id
+            console.log(trackId)
             
             contenido +='<li>'
-            // contenido += '<div class="trackPlayer"> <iframe scrolling="no" frameborder="0" allowTransparency="true" src="https://www.deezer.com/plugins/player?format=square&autoplay=false&playlist=false&width=40&height=40&color=007FEB&layout=dark&size=small&type=playlist&id=' + track.id + '&app_id=1" width="40" height="40"> </iframe> </div>'
+            contenido += '<iframe scrolling="no" frameborder="0" allowTransparency="true" src="https://www.deezer.com/plugins/player?format=square&autoplay=false&playlist=false&width=80&height=80&color=007FEB&layout=dark&size=small&type=playlist&id=' + trackId + '&app_id=1" width="80" height="80"></iframe>'
             contenido += '<a href="detalle.html?id=' + track.id + '&tipo=track" class="nombreCancion">' + track.title + '</a>' 
             contenido += '<a href="detalle.html?id=' + track.artist.id + '&tipo=artist" class="nombreArtista">' + track.artist.name +'</a>' 
             contenido += '<a href="detalle.html?id=' + track.album.id + '&tipo=album" class="nombreAlbum">' + track.album.title + '</a>' 
@@ -65,9 +68,10 @@ window.onload = function () {
             contenido += '</form>'
             contenido += '</a>' 
             contenido += '</li>' 
+
            
             listadoPlaylist.innerHTML += contenido
-
+        
             // BOTON REMOVE FROM PLAYLIST
 
             var boton = document.querySelector('#btnRemoveTrack')
@@ -75,25 +79,26 @@ window.onload = function () {
   
             e.preventDefault()
   
-            var recuperado = localStorage.getItem('playlist');
-            playlist = JSON.parse(recuperado); 
+            var recuperar = sessionStorage.getItem('playlist');
+            playlist = JSON.parse(recuperar); 
         
-            indiceDelArray = playlist.indexOf(id)
-            
+            indiceDelArray = playlist.indexOf(trackId)
             playlist.splice(indiceDelArray,1);
     
-            recuperado = localStorage.setItem('playlist');
+            sessionStorage.setItem('playlist' , JSON.stringify(playlist));
   
            
-              
+            
             })
+
+
         })
 
-        .catch(function(errors){
-            console.log(errors);
+        // .catch(function(errors){
+        //     console.log(errors);
             
-        })
+        // })
+    
     
     }
-
 }
