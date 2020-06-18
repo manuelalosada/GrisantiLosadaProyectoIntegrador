@@ -168,7 +168,7 @@ main{
 
 }
 
-.artista .canciones{
+.artista .cancionesArtista{
     display: flex;
     flex-direction: column;
     padding:  0px 10px;
@@ -176,7 +176,7 @@ main{
     
 }
 
-.artista .canciones .cancionArtista{
+.artista .cancionesArtista .cancionArtista{
     background-color:rgb(59, 59, 59);
     width: 100%;
     height: 30px;
@@ -366,7 +366,7 @@ main{
     background-color: rgba(36, 144, 148, 0.70);
 }
 
-.genero .canciones{
+.genero .cancionesGenero{
     display: flex;
     flex-direction: column;
     padding:  0px 10px;
@@ -374,7 +374,7 @@ main{
     
 }
 
-.genero .canciones .cancionGenero{
+.genero .cancionesGenero .cancionGenero{
     background-color:rgb(59, 59, 59);
     width: 100%;
     height: 30px;

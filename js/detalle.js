@@ -151,11 +151,9 @@ var htmlGenero = ""
           if(playlist.includes(id)){
             indiceDelArray = playlist.indexOf(id)
             var removed = playlist.splice(indiceDelArray,1);
-            // document.querySelector('button').innerHTML = "Delete from Playlist";
       
           } else {
-            playlist.push(id)
-            // document.querySelector('button').innerHTML = 'Add to Playlist';  
+            playlist.push(id)  
 
           }
           recuperado = localStorage.setItem('playlist');
@@ -224,18 +222,18 @@ var htmlGenero = ""
 
         document.querySelector('.fotoAlbum').innerHTML = ' <img src="' + data.cover_medium + '" alt="help-beatles" class="help">'
         document.querySelector('.nombreAlbum h1').innerHTML = data.title
-        document.querySelector('.subnombreAlbum h3').innerHTML = '<a href="detalle.html?id=' + data.artist.id + '&tipo=artist">' + data.artist.name
+        document.querySelector('.subnombreAlbum h3').innerHTML = '<a href="detalle.html?id=' + data.artist.id + '&tipo=artist">' + data.artist.name + '</a>'
         document.querySelector('.estrenoAlbum h4').innerHTML = data.release_date
 
-        var arrayAlbumGenero = data.genres
+        var arrayAlbumGenero = data.genres.data
+        console.log(arrayAlbumGenero)
         
-        // aca se agrega el codigo del genero con un for haciendo
-        // ciclos en el array
+        // aca se agrega el genero 
 
         for (let i = 0; i < arrayAlbumGenero.length; i++) {
-          const element = arrayAlbumGenero.length[i];
+          const element = arrayAlbumGenero[i];
 
-          document.querySelector('.generoAlbum a').innerHTML = element.name
+          document.querySelector('.generoAlbum a').innerHTML = '<a href=detalle.html?id=' + element.id + '&tipo=genre">' + element.name + '</a>'
           
         }
         
@@ -273,49 +271,59 @@ var htmlGenero = ""
         
           htmlArtista += '</div>'
 
-          htmlArtista += '<div class="canciones">'
-              htmlArtista += '<div class="cancionArtista"> <a>Bruises - Steve Void Remix</a> </div>'
-              htmlArtista +='<div class="cancionArtista"> <a>Someone You Loved</a> </div>'
-              htmlArtista +='<div class="cancionArtista"> <a>Before You Go</a> </div>'
-              htmlArtista +='<div class="cancionArtista"> <a>Hold Me While You Wait</a> </div>'
-              htmlArtista +='<div class="cancionArtista"> <a>Grace</a> </div> '
-              htmlArtista +='<div class="cancionArtista"> <a>Bruises - Steve Void Remix</a> </div>'
-              htmlArtista +='<div class="cancionArtista"> <a>Someone You Loved</a> </div>'
-              htmlArtista +='<div class="cancionArtista"> <a>Before You Go</a> </div>'
+          htmlArtista += '<div class="cancionesArtista">'
+              // htmlArtista += '<div class="cancionArtista"> <a></a> </div>'
+              // htmlArtista +='<div class="cancionArtista"> <a>Someone You Loved</a> </div>'
+              // htmlArtista +='<div class="cancionArtista"> <a>Before You Go</a> </div>'
+              // htmlArtista +='<div class="cancionArtista"> <a>Hold Me While You Wait</a> </div>'
+              // htmlArtista +='<div class="cancionArtista"> <a>Grace</a> </div> '
+              // htmlArtista +='<div class="cancionArtista"> <a>Bruises - Steve Void Remix</a> </div>'
+              // htmlArtista +='<div class="cancionArtista"> <a>Someone You Loved</a> </div>'
+              // htmlArtista +='<div class="cancionArtista"> <a>Before You Go</a> </div>'
           htmlArtista += '</div>'
 
           document.querySelector('.columna').innerHTML = htmlArtista
 
-        // Agregamos al html los datos del string.
+        // Agregamos al html los datos
 
           document.querySelector(".fotoArtista").innerHTML = '<img src="' + result.picture_medium + '" alt="help-beatles" class="lewis">' 
           document.querySelector(".nombreApellido").innerHTML = result.name
           document.querySelector(".seguidoresArtista a").innerHTML = result.nb_fan + ' followers'
           
-          
-          // falta agragar las canciones que no las encontre en este array (supongo que habria que hacer un for para ponerlas)
-          // que las canciones vayan al detalle del track!!!
+        //agregando las canciones del artista
 
           idArtista = result.id
-          fetch ('https://cors-anywhere.herokuapp.com/https://api.deezer.com/artists/' + result.id + "/top")
+          fetch ( 'https://cors-anywhere.herokuapp.com/https://api.deezer.com/artist/' + idArtista + '/top')
   
           .then(function(response){
               return response.json();
             })
+           
       
             .then(function(datos){
-              console.log(cancion);
+              console.log(datos)
 
-              for (let i = 0; i < datos.length; i++) {
-                const element = cancion[i];
+              for (let i = 0; i < datos.data.length; i++) {
+                const element = datos.data[i];
 
-                document.querySelector("")
-                
+                console.log(element)
+
+                idCancion= element.id
+                console.log(idCancion)
+               
+                var cancionesHtml =  '<div class="cancionArtista">' 
+                cancionesHtml = '<a href="detalle.html?id=' + idCancion + '&tipo=track">' + element.title + '</a>' 
+                cancionesHtml = '</div>'
+
+               
+                document.querySelector('.cancionesArtista').innerhtml= cancionesHtml
               }
+             
       
             })
 
       })
+
       //hacer lo mismo pero con generos
   } else if (tipo == 'genero'){
     fetch('https://cors-anywhere.herokuapp.com/https://api.deezer.com/genre/' + id)
@@ -336,7 +344,7 @@ var htmlGenero = ""
               htmlGenero += '</div>'
           htmlGenero += '</div>'
 
-          htmlGenero += ' <div class="canciones">'
+          htmlGenero += '<div class="cancionesGenero">'
             htmlGenero += '<div class="cancionGenero"> <a>Nombre de la cancion</a> </div>'
             htmlGenero +='<div class="cancionGenero"> <a>Nombre de la cancion</a> </div>'
             htmlGenero +='<div class="cancionGenero"> <a>Nombre de la cancion</a> </div>'
