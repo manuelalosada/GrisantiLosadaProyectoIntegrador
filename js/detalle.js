@@ -106,10 +106,15 @@ var htmlGenero = ""
 
           
           
+          var minutos = Math.floor(resultado.duration/60)
+          console.log(minutos)
+
+          
           var idTrack = resultado.id
 
           let recuperoStorage = sessionStorage.getItem('playlist');
-
+          
+        
           if(recuperoStorage == null){
               playlist = [];
           } else {
