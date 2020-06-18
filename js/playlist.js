@@ -22,6 +22,28 @@ window.onload = function () {
         playlist.forEach(function(id){ //esta funcion va a representar cada elemento del array
             showTrack(id)
         });
+          // BOTON REMOVE FROM PLAYLIST
+
+          var boton = document.querySelector('#btnRemoveTrack')
+          boton.addEventListener('click', function(e){
+
+          e.preventDefault()
+            var trackId = this.id
+          var recuperado = sessionStorage.getItem('playlist');
+          playlist = JSON.parse(recuperado); 
+      
+          indiceDelArray = playlist.indexOf(trackId)
+          playlist.splice(indiceDelArray,1);
+          
+  
+          sessionStorage.setItem('playlist', JSON.stringify(playlist));
+            location.reload()
+          // let indiceEnArray = playlist.indexOf(idTrack);
+          // playlist.splice(indiceEnArray, 1);
+          // document.querySelector('#btnAddToPlaylist').innerHTML = "Agregar a playlist";
+          // console.log(playlist);
+
+          })
     }
 
     var contenido = ''
@@ -47,7 +69,7 @@ window.onload = function () {
             contenido += '<a>' + track.release_date + '</a>' 
             contenido += '<a>'  
             contenido += '<form action = "playlist.html" method = "GET" id="removeFromPlaylist">' 
-            contenido += '<button type = "button" id="btnRemoveTrack"> Remove </button>'
+            contenido += '<button type = "button" id='+ track.id +'class="btnRemoveTrack"> Remove </button>'
             contenido += '</form>'
             contenido += '</a>' 
             contenido += '</li>' 
@@ -55,28 +77,7 @@ window.onload = function () {
            
             listadoPlaylist.innerHTML += contenido
         
-            // BOTON REMOVE FROM PLAYLIST
-
-            var boton = document.querySelector('#btnRemoveTrack')
-            boton.addEventListener('click', function(e){
-  
-            e.preventDefault()
-  
-            var recuperado = sessionStorage.getItem('playlist');
-            playlist = JSON.parse(recuperado); 
-        
-            indiceDelArray = playlist.indexOf(trackId)
-            playlist.splice(indiceDelArray,1);
-            document.querySelector('li').innerHTML = "";
-    
-            sessionStorage.setItem('playlist', JSON.stringify(playlist));
-
-            // let indiceEnArray = playlist.indexOf(idTrack);
-            // playlist.splice(indiceEnArray, 1);
-            // document.querySelector('#btnAddToPlaylist').innerHTML = "Agregar a playlist";
-            // console.log(playlist);
-  
-            })
+          
 
         })
 
