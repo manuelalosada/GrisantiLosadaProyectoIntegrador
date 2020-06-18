@@ -21,9 +21,9 @@ window.onload = function () {
     
     //para obtener los datos de un track
     
-            var queryString = location.search;
-            var data = new URLSearchParams(queryString);
-            var id = data.get('id');
+            // var queryString = location.search;
+            // var data = new URLSearchParams(queryString);
+            // var id = data.get('id');
    
     var recuperado = localStorage.getItem('playlist');
     var playlist = JSON.parse(recuperado);
@@ -50,11 +50,10 @@ window.onload = function () {
             return response.json();
         })
         .then(function (track) {
-            // var listadoPlaylist =document.querySelector('.listadoPlaylist')
             console.log(track)
             
             contenido +='<li>'
-            contenido += '<div class="trackPlayer"> <iframe scrolling="no" frameborder="0" allowTransparency="true" src="https://www.deezer.com/plugins/player?format=square&autoplay=false&playlist=false&width=40&height=40&color=007FEB&layout=dark&size=small&type=playlist&id=' + track.id + '&app_id=1" width="40" height="40"> </iframe> </div>'
+            // contenido += '<div class="trackPlayer"> <iframe scrolling="no" frameborder="0" allowTransparency="true" src="https://www.deezer.com/plugins/player?format=square&autoplay=false&playlist=false&width=40&height=40&color=007FEB&layout=dark&size=small&type=playlist&id=' + track.id + '&app_id=1" width="40" height="40"> </iframe> </div>'
             contenido += '<a href="detalle.html?id=' + track.id + '&tipo=track" class="nombreCancion">' + track.title + '</a>' 
             contenido += '<a href="detalle.html?id=' + track.artist.id + '&tipo=artist" class="nombreArtista">' + track.artist.name +'</a>' 
             contenido += '<a href="detalle.html?id=' + track.album.id + '&tipo=album" class="nombreAlbum">' + track.album.title + '</a>' 
@@ -71,23 +70,23 @@ window.onload = function () {
 
             // BOTON REMOVE FROM PLAYLIST
 
-            // var boton = decument.querySelector('#btnRemoveTrack')
-            // boton.addEventListener('click', function(e){
+            var boton = document.querySelector('#btnRemoveTrack')
+            boton.addEventListener('click', function(e){
   
-            // e.preventDefault()
+            e.preventDefault()
   
-            // var recuperado = localStorage.getItem('playlist');
-            // playlist = JSON.parse(recuperado); 
+            var recuperado = localStorage.getItem('playlist');
+            playlist = JSON.parse(recuperado); 
         
-            // indiceDelArray = playlist.indexOf(id)
+            indiceDelArray = playlist.indexOf(id)
             
-            // playlist.splice(indiceDelArray,1);
+            playlist.splice(indiceDelArray,1);
     
-            // recuperado = localStorage.setItem('playlist');
+            recuperado = localStorage.setItem('playlist');
   
            
               
-            // })
+            })
         })
 
         .catch(function(errors){

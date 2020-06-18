@@ -109,6 +109,8 @@ var htmlGenero = ""
           var duracionTrack = document.querySelector('.duracionTrack h3')
           duracionTrack.innerHTML += resultado.duration;
 
+          
+
           function getFloor(x) {
             return Math.floor(resultado.duration/60);
          }
@@ -131,7 +133,7 @@ var htmlGenero = ""
           
           
     
-          var boton = decument.querySelector('#btnAddToPlaylist')
+          var boton = document.querySelector('#btnAddToPlaylist')
           boton.addEventListener('click', function(e){
 
           e.preventDefault()
