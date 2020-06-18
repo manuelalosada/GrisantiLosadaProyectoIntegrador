@@ -72,6 +72,7 @@ window.onload = function () {
         
             indiceDelArray = playlist.indexOf(trackId)
             playlist.splice(indiceDelArray,1);
+            document.querySelector('li').innerHTML = "";
     
             sessionStorage.setItem('playlist', JSON.stringify(playlist));
 
