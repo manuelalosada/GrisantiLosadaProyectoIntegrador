@@ -2,33 +2,12 @@
  
 
 //     Detalle de Artista
-//         HARD:  top 5 de canciones del artista (hipervínculo 
-//             a detalle del track)
+//         HARD:  top 5 de canciones del artista 
 
 //     Detalle Genero
 //         Nombre del género 
 //        10 artistas que pertenezcan a ese género 
-//        (hipervínculo al detalle del artista)
-//      
-// Footer
-//       
-//        Redes sociales
-       
-// Funcionalidad:
-// 
-// Para lograr esto la página de detalle recibirá 
-// un parámetro via querystring en la URL indicando 
-// qué número de artist/album/track/genre) para identificar
-//  cual es el artista a buscar en la api de deezer.
-// Ej: detailTrack.htm?id=3
-       
-// Esto abrirá la página de detalle de track con el track 
-// número 3 de Deezer, mostrando su información.
 
-// Feature: El cliente requiere también desea que si 
-// el detalle seleccionado es de un track, este pueda 
-// ser almacenado en la sesión del usuario para escucharlo 
-// en la página de Playlist.
 
 
 
@@ -130,11 +109,27 @@ var htmlGenero = ""
           var duracionTrack = document.querySelector('.duracionTrack h3')
           duracionTrack.innerHTML += resultado.duration;
 
+          
           // document.querySelector('.generoTrack a').innerHTML = resultado.NO ENCUENTRO EL GENERO
-          
-          
-         
 
+          // var idTrack = resultado.id
+
+          // fetch('https://cors-anywhere.herokuapp.com/https://api.deezer.com/track/' + idTrack + )
+
+          // .then(function(response){
+          //   return response.json();
+          // })
+         
+    
+          // .then(function(datos){
+          //   console.log(datos)
+
+
+
+          //   })
+          
+          
+    
           var boton = decument.querySelector('#btnAddToPlaylist')
           boton.addEventListener('click', function(e){
 
@@ -271,16 +266,8 @@ var htmlGenero = ""
         
           htmlArtista += '</div>'
 
-          htmlArtista += '<div class="cancionesArtista">'
-              // htmlArtista += '<div class="cancionArtista"> <a></a> </div>'
-              // htmlArtista +='<div class="cancionArtista"> <a>Someone You Loved</a> </div>'
-              // htmlArtista +='<div class="cancionArtista"> <a>Before You Go</a> </div>'
-              // htmlArtista +='<div class="cancionArtista"> <a>Hold Me While You Wait</a> </div>'
-              // htmlArtista +='<div class="cancionArtista"> <a>Grace</a> </div> '
-              // htmlArtista +='<div class="cancionArtista"> <a>Bruises - Steve Void Remix</a> </div>'
-              // htmlArtista +='<div class="cancionArtista"> <a>Someone You Loved</a> </div>'
-              // htmlArtista +='<div class="cancionArtista"> <a>Before You Go</a> </div>'
-          htmlArtista += '</div>'
+          htmlArtista += '<ol class="cancionesArtista">'
+          htmlArtista += '</ol>'
 
           document.querySelector('.columna').innerHTML = htmlArtista
 
@@ -310,13 +297,9 @@ var htmlGenero = ""
 
                 idCancion= element.id
                 console.log(idCancion)
+              
                
-                var cancionesHtml =  '<div class="cancionArtista">' 
-                cancionesHtml = '<a href="detalle.html?id=' + idCancion + '&tipo=track">' + element.title + '</a>' 
-                cancionesHtml = '</div>'
-
-               
-                document.querySelector('.cancionesArtista').innerhtml= cancionesHtml
+                document.querySelector('.cancionesArtista').innerHTML += '<li class="cancionArtista"> <a href="detalle.html?id=' + idCancion + '&tipo=track">' + element.title + '</a> </li>' 
               }
              
       
@@ -344,13 +327,9 @@ var htmlGenero = ""
               htmlGenero += '</div>'
           htmlGenero += '</div>'
 
-          htmlGenero += '<div class="cancionesGenero">'
-            htmlGenero += '<div class="cancionGenero"> <a>Nombre de la cancion</a> </div>'
-            htmlGenero +='<div class="cancionGenero"> <a>Nombre de la cancion</a> </div>'
-            htmlGenero +='<div class="cancionGenero"> <a>Nombre de la cancion</a> </div>'
-            htmlGenero +='<div class="cancionGenero"> <a>Nombre de la cancion</a> </div>'
-            htmlGenero +='<div class="cancionGenero"> <a>Nombre de la cancion</a> </div>'
+          htmlGenero += '<ol class="artistasGenero">'
           htmlGenero += '</div>'
+
         htmlGenero += '</div>'
      
         document.querySelector('.columna').innerHTML = htmlGenero
@@ -360,16 +339,24 @@ var htmlGenero = ""
 
         idGenero = datos.id
 
-      // fetch ('https://cors-anywhere.herokuapp.com/https://api.deezer.com/genre/' + idGenero + "/top")
+      fetch ('https://cors-anywhere.herokuapp.com/https://api.deezer.com/genre/' + idGenero + "/artists")
 
-      // .then(function(response){
-      //   return response.json();
-      // })
+      .then(function(response){
+        return response.json();
+      })
 
-      // .then(function(datos){
-      //   console.log(datos);
+      .then(function(datos){
+        console.log(datos);
+      
+        for (let i = 0; i < datos.data.length; i++) {
+          const element = datos.data[i];
 
-      // })
+          document.querySelector('.artistasGenero').innerHTML += '<li class="astistaGenero"> <a href="detalle.html?id=' + element.id + '&tipo=artist">' + element.name + '</a> </li>' 
+          
+        }
+      
+
+      })
   })
   }
 }
