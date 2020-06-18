@@ -59,13 +59,18 @@ window.onload = function () {
 
             var trackId = track.id
             console.log(trackId)
+
+            var tiempoTrack = track.duration
+            var minutesTrack = Math.floor( tiempoTrack / 60);
+            var secondsTrack = segundosTrack - (minutes * 60);
+
             
             contenido +='<li>'
             contenido += '<iframe scrolling="no" frameborder="0" allowTransparency="true" src="https://www.deezer.com/plugins/player?format=square&autoplay=false&playlist=false&width=50&height=50&color=007FEB&layout=dark&size=medium&type=tracks&id=' + trackId + '&app_id=1" width="75" height="75"></iframe>';
             contenido += '<a href="detalle.html?id=' + track.id + '&tipo=track" class="nombreCancion">' + track.title + '</a>' 
             contenido += '<a href="detalle.html?id=' + track.artist.id + '&tipo=artist" class="nombreArtista">' + track.artist.name +'</a>' 
             contenido += '<a href="detalle.html?id=' + track.album.id + '&tipo=album" class="nombreAlbum">' + track.album.title + '</a>' 
-            contenido += '<a>' + track.duration + '</a>' 
+            contenido += '<a>' + minutesTrack + ' mins ' + secondsTrack + ' secs </a>' 
             contenido += '<a>' + track.release_date + '</a>' 
             contenido += '<a>'  
             contenido += '<form action = "playlist.html" method = "GET" id="removeFromPlaylist">' 

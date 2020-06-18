@@ -87,12 +87,12 @@ var htmlGenero = ""
           var fotoTrack = document.querySelector('.fotoTrack')
           fotoTrack.innerHTML = '<img src="' + resultado.album.cover_medium + '" alt="' + resultado.artist.name + '" class="tango4"></img>'
           
-          var segundosTrack = resultado.duration
-          var minutes = Math.floor(segundosTrack / 60);
-          var tiempoTrack = segundosTrack - minutes * 60;
+          var tiempoTrack = resultado.duration
+          var minutesTrack = Math.floor(tiempoTrack / 60);
+          var secondsTrack = segundosTrack - (minutes * 60);
 
           var duracionTrack = document.querySelector('.duracionTrack h3')
-          duracionTrack.innerHTML += tiempoTrack;
+          duracionTrack.innerHTML += minutesTrack + ' mins ' + secondsTrack + ' secs';
 
          
 
