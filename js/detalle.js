@@ -109,6 +109,10 @@ var htmlGenero = ""
           var duracionTrack = document.querySelector('.duracionTrack h3')
           duracionTrack.innerHTML += resultado.duration;
 
+          function getFloor(x) {
+            return Math.floor(resultado.duration/60);
+         }
+
           
           // NO ENCUENTRO EL GENERO
 
