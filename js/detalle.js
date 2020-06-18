@@ -1,14 +1,4 @@
-// DETALLE
- 
-
-//     Detalle de Artista
-//         HARD:  top 5 de canciones del artista 
-
-//     Detalle Genero
-//         Nombre del género 
-//        10 artistas que pertenezcan a ese género 
-
-     
+   
 window.onload = function (){
 
   var queryString = location.search;
@@ -86,28 +76,25 @@ var htmlGenero = ""
           tituloTrack.innerHTML= resultado.title
 
           var subnombreTrack = document.querySelector('.subnombreTrack h3')
-          subnombreTrack.innerHTML=   '<a href="detalle.html?id=' + resultado.artist.id + '&tipo=artist">' + resultado.artist.name + '</a>'
+          subnombreTrack.innerHTML=   '<a href="detalle.html?id=' + resultado.artist.id + '&tipo=artist"> ' + resultado.artist.name + '</a>'
 
           var fechaTrack = document.querySelector('.estrenoTrack h4')
           fechaTrack.innerHTML += resultado.release_date
           
           var nombreAlbumTrack = document.querySelector('.nombreAlbumTrack h3')
-          nombreAlbumTrack.innerHTML += '<a href="detalle.html?id=' + resultado.album.id +'&tipo=album">' + resultado.album.title +'</a>'
+          nombreAlbumTrack.innerHTML += '<a href="detalle.html?id=' + resultado.album.id +'&tipo=album"> ' + resultado.album.title +'</a>'
           
           var fotoTrack = document.querySelector('.fotoTrack')
           fotoTrack.innerHTML = '<img src="' + resultado.album.cover_medium + '" alt="' + resultado.artist.name + '" class="tango4"></img>'
           
-          
-          var duracionTrack = document.querySelector('.duracionTrack h3')
-          duracionTrack.innerHTML += secondsTrack;
-
           var segundosTrack = resultado.duration
           var minutes = Math.floor(segundosTrack / 60);
-          var secondsTrack = segundosTrack - minutes * 60;
+          var tiempoTrack = segundosTrack - minutes * 60;
 
+          var duracionTrack = document.querySelector('.duracionTrack h3')
+          duracionTrack.innerHTML += tiempoTrack;
 
-          // var minutos = Math.floor(resultado.duration/60)
-          // console.log(minutos)
+         
 
           
           var idTrack = resultado.id
