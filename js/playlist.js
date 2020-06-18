@@ -86,6 +86,50 @@ window.onload = function () {
             playlist.splice(indiceDelArray,1);
     
             sessionStorage.setItem('playlist' , JSON.stringify(playlist));
+
+        //     var idTrack = resultado.id
+
+        //   let recuperoStorage = sessionStorage.getItem('playlist');
+          
+        
+        //   if(recuperoStorage == null){
+        //       playlist = [];
+        //   } else {
+        //       playlist = JSON.parse(recuperoStorage);
+        //   }
+
+        //   if(playlist.includes == idTrack){
+        //       document.querySelector('#btnAddToPlaylist').innerHTML = "Delete from playlist";
+        //   }
+
+
+        //   let agregar = document.querySelector('#btnAddToPlaylist');
+
+        //   agregar.addEventListener('click', function(e){
+
+        //       e.preventDefault();
+
+        //       if(playlist == idTrack){
+                
+        //           let indiceEnArray = playlist.indexOf(idTrack);
+        //           playlist.splice(indiceEnArray, 1);
+        //           document.querySelector('#btnAddToPlaylist').innerHTML = "Agregar a playlist";
+        //           console.log(playlist);
+                  
+        //       } else { 
+            
+        //           playlist.push(idTrack);
+        //           document.querySelector('#btnAddToPlaylist').innerHTML = "Quitar de la playlist"
+        //       }
+
+
+
+        //       let playlistParaStorage = JSON.stringify(playlist);
+        //       sessionStorage.setItem('playlist', playlistParaStorage);
+        //       console.log(sessionStorage);
+
+
+        //   })
   
            
             
