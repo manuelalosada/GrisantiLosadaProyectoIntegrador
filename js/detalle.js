@@ -8,10 +8,7 @@
 //         Nombre del género 
 //        10 artistas que pertenezcan a ese género 
 
-
-
-
-      
+     
 window.onload = function (){
 
   var queryString = location.search;
@@ -102,12 +99,15 @@ var htmlGenero = ""
           
           
           var duracionTrack = document.querySelector('.duracionTrack h3')
-          duracionTrack.innerHTML += resultado.duration;
+          duracionTrack.innerHTML += secondsTrack;
 
-          
-          
-          var minutos = Math.floor(resultado.duration/60)
-          console.log(minutos)
+          var segundosTrack = resultado.duration
+          var minutes = Math.floor(segundosTrack / 60);
+          var secondsTrack = segundosTrack - minutes * 60;
+
+
+          // var minutos = Math.floor(resultado.duration/60)
+          // console.log(minutos)
 
           
           var idTrack = resultado.id
@@ -121,7 +121,7 @@ var htmlGenero = ""
               playlist = JSON.parse(recuperoStorage);
           }
 
-          if(playlist.includes == idTrack){
+          if(playlist.includes(idTrack)){
               document.querySelector('#btnAddToPlaylist').innerHTML = "Delete from playlist";
           }
 
@@ -132,7 +132,7 @@ var htmlGenero = ""
 
               e.preventDefault();
 
-              if(playlist == idTrack){
+              if(playlist.includes(idTrack)){
                 
                   let indiceEnArray = playlist.indexOf(idTrack);
                   playlist.splice(indiceEnArray, 1);
@@ -142,7 +142,7 @@ var htmlGenero = ""
               } else { 
             
                   playlist.push(idTrack);
-                  document.querySelector('#btnAddToPlaylist').innerHTML = "Quitar de la playlist"
+                  document.querySelector('#btnAddToPlaylist').innerHTML = "Remove from playlist"
               }
 
 
@@ -327,7 +327,7 @@ var htmlGenero = ""
             .then(function(datos){
               console.log(datos)
 
-              for (let i = 0; i < datos.data.length; i++) {
+              for (let i = 0; i <= 4; i++) {
                 const element = datos.data[i];
 
                 console.log(element)
@@ -385,7 +385,7 @@ var htmlGenero = ""
       .then(function(datos){
         console.log(datos);
       
-        for (let i = 0; i < datos.data.length; i++) {
+        for (let i = 0; i <= 4; i++) {
           const element = datos.data[i];
 
           document.querySelector('.artistasGenero').innerHTML += '<li class="astistaGenero"> <a href="detalle.html?id=' + element.id + '&tipo=artist">' + element.name + '</a> </li>' 
