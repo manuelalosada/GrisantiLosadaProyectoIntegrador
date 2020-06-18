@@ -159,7 +159,7 @@ main{
 
 .playlist .canciones ol .datos {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     margin-bottom: 5px;
     padding: 0;
     text-align: center;
@@ -167,8 +167,19 @@ main{
 
 .playlist .canciones ol li {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     text-align: center;
+}
+
+.playlist .canciones ol li .trackPlayer{
+    display: flex;
+    width: 100%;
+}
+.playlist .canciones ol li .trackPlayer iframe{
+    align-items: center;
+}
+.playlist .canciones ol li #btnRemoveTrack{
+    background-color: black;
 }
 
 .playlist .canciones ol li a{

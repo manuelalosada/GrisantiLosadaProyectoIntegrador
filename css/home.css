@@ -296,6 +296,7 @@ footer{
         .socialMedia {
             display: flex;
             flex-direction: row;
+            justify-content: space-around;
             padding: 20px;
             width: 300px;
 

@@ -103,14 +103,14 @@ var htmlGenero = ""
           nombreAlbumTrack.innerHTML += '<a href="detalle.html?id=' + resultado.album.id +'&tipo=album">' + resultado.album.title +'</a>'
           
           var fotoTrack = document.querySelector('.fotoTrack')
-          fotoTrack.innerHTML = '<img src="' + resultado.album.cover_medium + '" alt="tango4" class="tango4"></img>'
+          fotoTrack.innerHTML = '<img src="' + resultado.album.cover_medium + '" alt="' + resultado.artist.name + '" class="tango4"></img>'
           
           
           var duracionTrack = document.querySelector('.duracionTrack h3')
           duracionTrack.innerHTML += resultado.duration;
 
           
-          // document.querySelector('.generoTrack a').innerHTML = resultado.NO ENCUENTRO EL GENERO
+          // NO ENCUENTRO EL GENERO
 
           // var idTrack = resultado.id
 
@@ -119,12 +119,9 @@ var htmlGenero = ""
           // .then(function(response){
           //   return response.json();
           // })
-         
-    
+             
           // .then(function(datos){
           //   console.log(datos)
-
-
 
           //   })
           
