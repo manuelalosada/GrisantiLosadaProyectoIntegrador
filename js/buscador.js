@@ -83,9 +83,7 @@ window.onload = function () {
 
 
         })
-        // .catch (function(error){
-        //     console.log ('El error fue ' + error)
-        // }); 
+       
 
         // BUSCADOR ALBUM 
 
@@ -122,7 +120,6 @@ window.onload = function () {
               contenidoAlbum += '</div>'
               contenidoAlbum += '</div>'
                    
-              // contenidoAlbum += '<div class="canciones"> <a href="detalle.html?id=' + busquedaUsuario +'"> Album: ' +  nombreAlbum + '</a>  </div>'
               contenidoAlbum += '<div class="cancion"> <a> Album: ' + nombreAlbumCancion + '</a> </div>'
               contenidoAlbum += '<div class="cancion"> <a> Artista: ' + nombreArtistaAlbum + '</a> </div>'
                   
@@ -183,7 +180,6 @@ window.onload = function () {
                    
               contenidoArtista += '<div class="canciones"> <a href="detalle.html?id=' + busquedaUsuario +'"> Cantidad de Canciones: ' +  cantidadCanciones + '</a>  </div>'
               contenidoArtista += '<div class="cancion"> <a> Tipo de Artista: ' + nombreAlbumCancion + '</a> </div>'
-              // contenidoArtista += '<div class="cancion"> <a> Artista: ' + nombreArtistaCancion + '</a> </div>'
                   
               contenidoArtista += '</div>'
               contenidoArtista += '</li>'
