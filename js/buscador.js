@@ -73,7 +73,7 @@ window.onload = function () {
 
                     contenidoCancion += '</div>'
                    
-                  contenidoCancion += '<div class="canciones"> Cancion: <a href="detalle.html?id=' + busquedaUsuario +'"> ' +  nombreCancion + '</a>  </div>'
+                  contenidoCancion += '<div class="canciones"> Cancion: <a href="detalle.html?id=' +  + '"> ' +  nombreCancion + '</a>  </div>'
                   contenidoCancion += '<div class="cancion"> <a> Album: ' + nombreAlbumCancion + '</a> </div>'
                   contenidoCancion += '<div class="cancion"> <a> Artist: ' + nombreArtistaCancion + '</a> </div>'
                   contenidoCancion += ' <div class="cancion"> <a> Duration: ' +  minutesTrack + ' mins ' + secondsTrack + ' secs </a> </div>'

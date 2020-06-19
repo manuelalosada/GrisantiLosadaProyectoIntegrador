@@ -368,18 +368,69 @@ footer{
             width: 375px;
         }
 
-        .rankings .rankingArtista a {
-            
-            font-size: 22px;
+        /* codigo del ranking de los tracks */
+
+
+
+        .rankings .rankingTrack h2 {
+            height: 40px;
+            margin: 3px 0;
+            font-size: 16px;
+         }
+        
+        .rankings .rankingTrack .listadoTrack li {
+            height: 45px;
+            margin-bottom: 6px;
+            padding-left: 5px;
         }
-        .rankings .rankingAlbum a {
-            
-            font-size: 22px;
-        }
+
         .rankings .rankingTrack a {
             
-            font-size: 22px;
+            font-size: 14px;
         }
+        
+
+         /* codigo del ranking de los artista */
+
+
+
+         .rankings .rankingArtist h2 {
+            height: 40px;
+            margin: 3px 0;
+            font-size: 16px;
+         }
+        
+        .rankings .rankingArtist .listadoArtist li {
+            height: 45px;
+            margin-bottom: 6px;
+            padding-left: 5px;
+        }
+        
+        .rankings .rankingArtista a {
+            
+            font-size: 14px;
+        }
+
+
+        /* cogigo de los albums */
+
+        .rankings .rankingAlbum h2 {
+            height: 40px;
+            margin: 3px 0;
+            font-size: 16px;
+         }
+        
+        .rankings .rankingAlbum .listadoArtist li {
+            height: 45px;
+            margin-bottom: 6px;
+            padding-left: 5px;
+        }
+
+        .rankings .rankingAlbum a {
+            
+            font-size: 14px;
+        }
+       
 
 
         /* aca va el footer */
