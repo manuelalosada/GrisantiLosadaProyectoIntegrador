@@ -363,11 +363,21 @@ footer{
         .rankings{
             height: 200px;
         }
-
-        .slider{
+        
+        .slider {
+            height: 200px;
+            margin-bottom: 10px;
             width: 375px;
         }
-
+        
+        .video{
+            width: 100%;
+            height: 100%;
+        }
+        
+        .rankings{
+            margin: 20px 0;
+        }
         /* codigo del ranking de los tracks */
 
 
@@ -375,60 +385,60 @@ footer{
         .rankings .rankingTrack h2 {
             height: 40px;
             margin: 3px 0;
-            font-size: 16px;
+            font-size: 12px;
          }
-        
+         
         .rankings .rankingTrack .listadoTrack li {
-            height: 45px;
+            height: 29px;
             margin-bottom: 6px;
             padding-left: 5px;
         }
 
         .rankings .rankingTrack a {
             
-            font-size: 14px;
+            font-size: 10px;
         }
         
 
          /* codigo del ranking de los artista */
 
-
-
-         .rankings .rankingArtist h2 {
+        
+        .rankings .rankingArtista h2 {
             height: 40px;
             margin: 3px 0;
-            font-size: 16px;
-         }
+            font-size: 12px;
+           
+        }
         
-        .rankings .rankingArtist .listadoArtist li {
-            height: 45px;
+        .rankings .rankingArtista .listadoArtista {
+            height: 200px;
+        }
+        
+        .rankings .rankingArtista .listadoArtista li {
+            height: 29px;
             margin-bottom: 6px;
             padding-left: 5px;
         }
         
-        .rankings .rankingArtista a {
-            
-            font-size: 14px;
+        .rankings .rankingArtista .listadoArtista li a{
+            font-size: 10px;
         }
-
 
         /* cogigo de los albums */
 
         .rankings .rankingAlbum h2 {
             height: 40px;
             margin: 3px 0;
-            font-size: 16px;
+            font-size: 12px;
          }
         
-        .rankings .rankingAlbum .listadoArtist li {
-            height: 45px;
+        .rankings .rankingAlbum .listadoAlbum li {
+            height: 29px;
             margin-bottom: 6px;
             padding-left: 5px;
         }
-
-        .rankings .rankingAlbum a {
-            
-            font-size: 14px;
+        .rankings .rankingAlbum .listadoAlbum li a{
+            font-size:10px;
         }
        
 
@@ -439,6 +449,19 @@ footer{
             font-size: x-small;
            
         }
+
+        
+        /* SOCIAL MEDIA */
+
+        .socialMedia {
+            padding: 27px;
+            width: 230px;
+
+        }
+        
+
+     
+
 
 
 }
