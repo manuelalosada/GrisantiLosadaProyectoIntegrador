@@ -104,7 +104,7 @@ window.onload = function () {
                     var idTrackImg = this.id 
 
                     
-                    document.querySelector('iframe').innerhtml = 'https://www.deezer.com/plugins/player?format=square&autoplay=false&playlist=false&width=300&height=300&color=007FEB&layout=dark&size=medium&type=tracks&id=' + idTrackImg + '&app_id=1'
+                    document.querySelector('iframe').innerhtml = 'https://www.deezer.com/plugins/player?format=square&autoplay=false&playlist=false&width=300&height=300&color=007FEB&layout=dark&size=medium&type=tracks&id=' + track.id + '&app_id=1'
                 })
             }
 
