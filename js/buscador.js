@@ -44,14 +44,14 @@ window.onload = function () {
               console.log(element)
 
               var nombreCancion = element.title
-              var fotoAlbumCancion = element.album.cover
+              var fotoAlbumCancion = element.album.cover_medium
               var nombreAlbumCancion = element.album.title
               var nombreArtistaCancion = element.artist.name
               var duracionCancion = element.duration
 
-      
+              console.log(fotoAlbumCancion)
+
   
-              var duracionCancion = track.duration
               var minutesTrack = Math.floor( duracionCancion / 60);
               var secondsTrack = duracionCancion - (minutesTrack * 60);
 
@@ -117,10 +117,11 @@ window.onload = function () {
               const element = resultado.data[i];
               console.log(element)
               var nombreAlbum = element.artist.name
-              var fotoAlbum = element.picture
-              var nombreAlbumCancion = element.title
+              var fotoAlbum = element.picture_medium
+              var nombreAlbum = element.title
               var nombreArtistaAlbum = element.artist.name
-              var duracionCancion = element.duration
+
+      
 
 
               contenidoAlbum += '<li>'
@@ -128,13 +129,13 @@ window.onload = function () {
               contenidoAlbum += '<div class="genero">'
               contenidoAlbum += '<div class="generalGenero">'
               contenidoAlbum += '<div class="fotoGenero">'
-              contenidoAlbum += '<img src="' + fotoAlbum + '" alt="' + nombre + '">'
+              contenidoAlbum += '<img src="' + fotoAlbum + '" alt="' + nombreAlbum + '">'
               contenidoAlbum += '</div>'
               contenidoAlbum += '<div class="nombreGenero"><a>' + nombreAlbum + '</a>'
               contenidoAlbum += '</div>'
               contenidoAlbum += '</div>'
                    
-              contenidoAlbum += '<div class="cancion"> <a> Album: ' + nombreAlbumCancion + '</a> </div>'
+              contenidoAlbum += '<div class="cancion"> <a> Album: ' + nombreAlbum + '</a> </div>'
               contenidoAlbum += '<div class="cancion"> <a> Artista: ' + nombreArtistaAlbum + '</a> </div>'
                   
               contenidoAlbum += '</div>'
@@ -175,7 +176,7 @@ window.onload = function () {
               const element = resultado.data[i];
               console.log(element)
               var nombreArtista = element.name
-              var fotoAlbumArtista = element.cover
+              var fotoArtista = element.cover_medium
               var cantidadCanciones = element.nb_tracks
 
               
@@ -186,7 +187,7 @@ window.onload = function () {
               contenidoArtista += '<div class="genero">'
               contenidoArtista += '<div class="generalGenero">'
               contenidoArtista += '<div class="fotoGenero">'
-              contenidoArtista += '<img src="' + fotoAlbumArtista + '" alt="' + nombreArtista + '">'
+              contenidoArtista += '<img src="' + fotoArtista + '" alt="' + nombreArtista + '">'
               contenidoArtista += '</div>'
               contenidoArtista += '<div class="nombreGenero"><a>' + nombreArtista + '</a>'
               contenidoArtista += '</div>'
@@ -201,9 +202,7 @@ window.onload = function () {
              
 
 
-              var nombreCancion = document.querySelector('.resultadoBusqueda')
-              
-              nombreCancion.innerHTML = contenidoCancion
+              document.querySelector('.resultadoBusqueda').innerHTML = contenidoArtista
           }
 
           
