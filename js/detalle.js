@@ -223,7 +223,7 @@ window.onload = function (){
           for (let i = 0; i < arrayAlbumGenero.length; i++) {
             const element = arrayAlbumGenero[i];
   
-            document.querySelector('.generoAlbum a').innerHTML = '<a href=detalle.html?id=' + element.id + '&tipo=genre">' + element.name + '</a>'
+            document.querySelector('.generoAlbum a').innerHTML = '<a href=detalle.html?id=' + element.id + '&tipo=genero">' + element.name + '</a>'
             
           }
           
