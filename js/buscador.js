@@ -17,6 +17,7 @@
 
 window.onload = function () {
 
+
     var queryString = location.search;
 
     var queryStringObj = new URLSearchParams (queryString);
@@ -32,7 +33,7 @@ window.onload = function () {
          })
 
         .then(function(resultado) {
-          console.log(resultado.data);
+          console.log(resultado);
 
           var contenidoCancion = ""
 
@@ -48,21 +49,34 @@ window.onload = function () {
               var nombreArtistaCancion = element.artist.name
               var duracionCancion = element.duration
 
+      
+  
+              var duracionCancion = track.duration
+              var minutesTrack = Math.floor( duracionCancion / 60);
+              var secondsTrack = duracionCancion - (minutesTrack * 60);
+
 
               contenidoCancion += '<li>'
+
                 contenidoCancion += '<h3> Respuesta </h3>'
+
                 contenidoCancion += '<div class="genero">'
+
                     contenidoCancion += '<div class="generalGenero">'
+
                         contenidoCancion += '<div class="fotoGenero">'
                         contenidoCancion += '<img src="' + fotoAlbumCancion + '" alt="' + nombreAlbumCancion + '">'
                         contenidoCancion += '</div>'
+
                         contenidoCancion += '<div class="nombreGenero"><a>' + nombreCancion + '</a>'
                         contenidoCancion += '</div>'
+
                     contenidoCancion += '</div>'
                    
                   contenidoCancion += '<div class="canciones"> Cancion: <a href="detalle.html?id=' + busquedaUsuario +'"> ' +  nombreCancion + '</a>  </div>'
                   contenidoCancion += '<div class="cancion"> <a> Album: ' + nombreAlbumCancion + '</a> </div>'
-                  contenidoCancion += '<div class="cancion"> <a> Artista: ' + nombreArtistaCancion + '</a> </div>'
+                  contenidoCancion += '<div class="cancion"> <a> Artist: ' + nombreArtistaCancion + '</a> </div>'
+                  contenidoCancion += ' <div class="cancion"> <a> Duration: ' +  minutesTrack + ' mins ' + secondsTrack + ' secs </a> </div>'
                   
                 contenidoCancion += '</div>'
               contenidoCancion += '</li>'
@@ -94,7 +108,7 @@ window.onload = function () {
          })
 
         .then(function(resultado) {
-          console.log(resultado.data);
+          console.log(resultado);
 
           var contenidoAlbum = ""
 
@@ -104,7 +118,7 @@ window.onload = function () {
               console.log(element)
               var nombreAlbum = element.artist.name
               var fotoAlbum = element.picture
-              var nombreAlbumCancion = element.album.title
+              var nombreAlbumCancion = element.title
               var nombreArtistaAlbum = element.artist.name
               var duracionCancion = element.duration
 
@@ -152,7 +166,7 @@ window.onload = function () {
          })
 
         .then(function(resultado) {
-          console.log(resultado.data);
+          console.log(resultado);
 
           var contenidoArtista = ""
 
@@ -163,7 +177,7 @@ window.onload = function () {
               var nombreArtista = element.name
               var fotoAlbumArtista = element.cover
               var cantidadCanciones = element.nb_tracks
-              var tipoArtista = element.data.record_type
+
               
 
 
@@ -179,7 +193,7 @@ window.onload = function () {
               contenidoArtista += '</div>'
                    
               contenidoArtista += '<div class="canciones"> <a href="detalle.html?id=' + busquedaUsuario +'"> Cantidad de Canciones: ' +  cantidadCanciones + '</a>  </div>'
-              contenidoArtista += '<div class="cancion"> <a> Tipo de Artista: ' + nombreAlbumCancion + '</a> </div>'
+              
                   
               contenidoArtista += '</div>'
               contenidoArtista += '</li>'
