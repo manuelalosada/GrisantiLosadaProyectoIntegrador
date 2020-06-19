@@ -285,7 +285,7 @@ window.onload = function (){
               .then(function(datos){
                 console.log(datos)
   
-                for (let i = 0; i < datos.data.length; i++) {
+                for (let i = 0; i <=4; i++) {
                   const element = datos.data[i];
   
                   console.log(element)
@@ -343,7 +343,7 @@ window.onload = function (){
         .then(function(datos){
           console.log(datos);
         
-          for (let i = 0; i < datos.data.length; i++) {
+          for (let i = 0; i <=4; i++) {
             const element = datos.data[i];
   
             document.querySelector('.artistasGenero').innerHTML += '<li class="astistaGenero"> <a href="detalle.html?id=' + element.id + '&tipo=artist">' + element.name + '</a> </li>' 
