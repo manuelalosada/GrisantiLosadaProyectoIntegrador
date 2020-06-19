@@ -1,16 +1,5 @@
 // DETALLE
  
-
-//     Detalle de Artista
-//         HARD:  top 5 de canciones del artista 
-
-//     Detalle Genero
-//         Nombre del género 
-//        10 artistas que pertenezcan a ese género 
-
-
-// href="detalle.html?id=' + element.artist.id +'&tipo=artist
-// href="detalle.html?id=' + element.id + '&tipo=track
       
 window.onload = function (){
 
