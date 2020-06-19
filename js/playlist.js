@@ -72,7 +72,8 @@ window.onload = function () {
 
             
             contenido +='<li>'
-            contenido += '<img src="' + track.album.cover_medium + '" alt="' + track.title + '" class=imgTrack id=' + track.id + ' height="50" width="50">'
+            // contenido += '<img src="' + track.album.cover_medium + '" alt="' + track.title + '" class=imgTrack id=' + track.id + ' height="50" width="50">'
+            contenido += '<iframe scrolling="no" frameborder="0" allowTransparency="true" src="https://www.deezer.com/plugins/player?format=square&autoplay=false&playlist=false&width=50&height=50&color=007FEB&layout=dark&size=medium&type=tracks&id=' + track.id +'&app_id=1" width="75" height="75"></iframe>';
             contenido += '<a href="detalle.html?id=' + track.id + '&tipo=track" class="nombreCancion " >' + track.title + '</a>' 
             contenido += '<a href="detalle.html?id=' + track.artist.id + '&tipo=artist" class="nombreArtista">' + track.artist.name +'</a>' 
             contenido += '<a href="detalle.html?id=' + track.album.id + '&tipo=album" class="nombreAlbum">' + track.album.title + '</a>' 
