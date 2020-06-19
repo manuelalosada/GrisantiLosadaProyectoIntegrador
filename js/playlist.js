@@ -29,6 +29,8 @@ window.onload = function () {
 
             for (let i = 0; i < boton.length; i++) {
                 const element = boton[i];
+
+                console.log(element)
                 
                 element.addEventListener('click', function(e){
 
@@ -50,7 +52,7 @@ window.onload = function () {
          
     }
 
-    var contenido = ''
+    var contenido =''
     function showTrack(id){
 
         fetch ('https://cors-anywhere.herokuapp.com/https://api.deezer.com/track/' + id)
@@ -70,8 +72,8 @@ window.onload = function () {
 
             
             contenido +='<li>'
-            contenido += '<img src="' + track.album.cover_small + '" alt="' + track.title + '" class=imgTrack id=' + track.id + 'height="50" width="50">'
-            contenido += '<a href="detalle.html?id=' + track.id + '&tipo=track" class="nombreCancion" >' + track.title + '</a>' 
+            contenido += '<img src="' + track.album.cover_medium + '" alt="' + track.title + '" class=imgTrack id=' + track.id + ' height="50" width="50">'
+            contenido += '<a href="detalle.html?id=' + track.id + '&tipo=track" class="nombreCancion " >' + track.title + '</a>' 
             contenido += '<a href="detalle.html?id=' + track.artist.id + '&tipo=artist" class="nombreArtista">' + track.artist.name +'</a>' 
             contenido += '<a href="detalle.html?id=' + track.album.id + '&tipo=album" class="nombreAlbum">' + track.album.title + '</a>' 
             contenido += '<a>' + minutesTrack + ' mins ' + secondsTrack + ' secs </a>' 
@@ -93,12 +95,15 @@ window.onload = function () {
             for (let i = 0; i < iframePlayer.length; i++) {
                 const element = iframePlayer[i];
                 
+                
                 element.addEventListener('click', function(e){
 
                     e.preventDefault()
 
-                    var idTrackImg = this.id
-                    document.querySelector('iframe src').innerhtml = 'https://www.deezer.com/plugins/player?format=square&autoplay=false&playlist=false&width=300&height=300&color=007FEB&layout=dark&size=medium&type=tracks&id=' + idTrackImg + '&app_id=1'
+                    var idTrackImg = this.id 
+
+                    
+                    document.querySelector('iframe').innerhtml = 'https://www.deezer.com/plugins/player?format=square&autoplay=false&playlist=false&width=300&height=300&color=007FEB&layout=dark&size=medium&type=tracks&id=' + idTrackImg + '&app_id=1'
                 })
             }
 

@@ -13,8 +13,6 @@
 // esté listo
 
 
-// aca va lo que vimos en la clase 29/05
-// hay que mandar los datos al buscador.
 
 
 window.onload = function () {
