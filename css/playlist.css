@@ -316,6 +316,36 @@ footer{
         width: 40px;
     }
 
+    .logoDeezer{
+        width: 9%;
+        height: 90%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    
+    .logoDeezer img {
+        height: 59%;
+    }
+
+
+ .socialMedia {
+    display: flex;
+    flex-direction: row;
+    padding: 27px;
+    width: 230px;
+
+}
+
+.fa{
+    padding: 15px;
+    font-size: 30px;
+    width: 33%;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+}
+
 }
 
 
