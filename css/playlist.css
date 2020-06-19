@@ -295,21 +295,56 @@ footer{
     }
 
     .playlist .nombrePlaylist h1{
-        margin-top: 15px;
+        margin-top: 9px;
     }
 
     .playlist .nombrePlaylist h3{
         height: 25px;
         padding: 2px 15px;
         margin: 10px 0px;
-        font-size: 15px;
+        font-size: 9px;
     }
     .playlist .canciones ol li {
-        height: 30px;
+        height: 52px;
         padding: 6px 0px 6px 4px;
-        font-size: 15px;
+        font-size: 9px;
         
     }
+
+    iframe{
+        height: 40px;
+        width: 40px;
+    }
+
+    .logoDeezer{
+        width: 9%;
+        height: 90%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    
+    .logoDeezer img {
+        height: 59%;
+    }
+
+
+ .socialMedia {
+    display: flex;
+    flex-direction: row;
+    padding: 27px;
+    width: 230px;
+
+}
+
+.fa{
+    padding: 15px;
+    font-size: 30px;
+    width: 33%;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+}
 
 }
 
