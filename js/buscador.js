@@ -176,9 +176,9 @@ window.onload = function () {
              
   
   
-              var nombreCancion = document.querySelector('.resultadoBusqueda')
+              var nombreArtista = document.querySelector('.resultadoBusqueda')
               
-              nombreCancion.innerHTML = contenidoCancion
+              nombreArtista.innerHTML = contenidoArtista
           }
   
           
